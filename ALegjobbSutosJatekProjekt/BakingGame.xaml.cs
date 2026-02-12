@@ -24,9 +24,9 @@ namespace ALegjobbSutosJatekProjekt
     public class hozzávaló
     {
         public string nev { get; set; }
-        public Image kinezet { get; set; }
+        public string imagepath { get; set; }
         public Point StartPosition { get; set; }
-        public Point TargetPosition { get; set; }
+        public string targettag { get; set; }
     }
 
 
@@ -36,8 +36,6 @@ namespace ALegjobbSutosJatekProjekt
         public BakingGame()
         {
             InitializeComponent();
-            preparation();
-            section1();
         }
 
 
@@ -68,7 +66,6 @@ namespace ALegjobbSutosJatekProjekt
            
 
         }
-
 
         private bool IsInTargetArea(Point current, Point target)
         {
