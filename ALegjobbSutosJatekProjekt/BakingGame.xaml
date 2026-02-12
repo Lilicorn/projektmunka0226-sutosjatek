@@ -51,12 +51,12 @@
                             <ColumnDefinition Width="2*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="1" x:Name="ingredient2" Tag="" Source="/egg.jpg" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp" />
-                        <Image Grid.Column="2" x:Name="ingredient4" Tag="" Source="/egg.jpg" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp"/>
+                        <Image Grid.Column="1" x:Name="ingredient2" Tag="" Source="/egg.jpg" Width="128" Height="128" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="2" x:Name="ingredient4" Tag="" Source="/egg.jpg" Width="128" Height="128" MouseLeftButtonDown="MouseDown"/>
 
                     </Grid>
                 </Grid>
-                <Image Grid.Column="2" x:Name="usualtarget" Tag="" Source="/bowl1.jpg"/>
+                <Image Grid.Column="2" x:Name="Usualtarget" Tag="" Source="/bowl1.jpg"/>
 
             </Grid>
 

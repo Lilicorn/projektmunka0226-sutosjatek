@@ -55,17 +55,70 @@ namespace ALegjobbSutosJatekProjekt
 
             // Pozíció kiszámolás
             Point position = e.GetPosition(Table);
-            offset = new Point(draggedImage.Width / 2, draggedImage.Height / 2);
+            offset = new Point(huzigalt.Width / 2, huzigalt.Height / 2);
 
-            Canvas.SetLeft(draggedImage, position.X - offset.X);
-            Canvas.SetTop(draggedImage, position.Y - offset.Y);
+            Canvas.SetLeft(huzigalt, position.X - offset.X);
+            Canvas.SetTop(huzigalt, position.Y - offset.Y);
 
-            Table.Children.Add(draggedImage);
+            Table.Children.Add(huzigalt);
 
-            originalImage.Opacity = 0.3;
+            eredetihely.Opacity = 0.3;
 
-            Table.MouseMove += Table_MouseMove;
-            Table.MouseLeftButtonUp += Table_MouseUp;
+            Table.MouseMove += MouseMove;
+            Table.MouseLeftButtonUp += MouseUp;
+            Table.CaptureMouse();
+
+        }
+
+        private void MouseMove(object sender, MouseEventArgs e)
+        {
+            if (huzigalt == null) return;
+
+            Point position = e.GetPosition(Table);
+
+            Canvas.SetLeft(huzigalt, position.X - offset.X);
+            Canvas.SetTop(huzigalt, position.Y - offset.Y);
+        }
+
+        private void MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (huzigalt == null) return;
+
+            Rect draggedRect = new Rect(
+                Canvas.GetLeft(huzigalt),
+                Canvas.GetTop(huzigalt),
+                huzigalt.Width,
+                huzigalt.Height);
+
+
+            GeneralTransform transform = Usualtarget.TransformToVisual(Table);
+            Point topLeft = transform.Transform(new Point(0, 0));
+
+            Rect targetRect = new Rect(
+                topLeft.X,
+                topLeft.Y,
+                Usualtarget.ActualWidth,
+                Usualtarget.ActualHeight);
+
+
+            if (draggedRect.IntersectsWith(targetRect))
+            {
+                MessageBox.Show("Belekerült a tálba! 🎉");
+                Table.Children.Remove(huzigalt);
+            }
+            else
+            {
+                Table.Children.Remove(huzigalt);
+                eredetihely.Opacity = 1;
+            }
+
+            huzigalt = null;
+            eredetihely = null;
+
+            Table.MouseMove -= MouseMove;
+            Table.MouseLeftButtonUp -= MouseUp;
+            Table.ReleaseMouseCapture();
+
         }
 
     }
