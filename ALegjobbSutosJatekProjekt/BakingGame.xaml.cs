@@ -57,28 +57,15 @@ namespace ALegjobbSutosJatekProjekt
 
         private void MouseMove(object sender, MouseEventArgs e)
         {
-            var ing = ingredients.FirstOrDefault(i => i.kinezet == huzigalando);
-            var pos = e.GetPosition(GameCanvas);
 
             if (!huzigalszevalamit && huzigalando == null)
             {
                 return;
             }
-            else if (IsInTargetArea(pos, ing.TargetPosition))
-            {
-                // Jó helyre raktuk!
-                Canvas.SetLeft(huzigalando, ing.TargetPosition.X);
-                Canvas.SetTop(huzigalando, ing.TargetPosition.Y);
-                MessageBox.Show($"{ing.nev} jó helyen!");
-                huzigalszevalamit = false;
-                huzigalando = null;
-            }
-            else
-            {
                 var position = e.GetPosition(GameCanvas);
                 Canvas.SetLeft(huzigalando, position.X - (huzigalando.ActualWidth / 2));
                 Canvas.SetTop(huzigalando, position.Y - (huzigalando.ActualHeight / 2));
-            }
+           
 
         }
 
@@ -88,57 +75,6 @@ namespace ALegjobbSutosJatekProjekt
             double tolerance = 50; // +/- 20 pixel pontosság
             return Math.Abs(current.X - target.X) < tolerance &&
                    Math.Abs(current.Y - target.Y) < tolerance;
-        }
-
-        public void preparation()
-        {
-            // Hozzávalók definiálása
-            ingredients.Add(new hozzávaló
-            {
-                nev = "egg",
-                kinezet = Egg,
-                StartPosition = new Point(50, 50),
-                TargetPosition = new Point(100, 300)
-            });
-
-            ingredients.Add(new hozzávaló
-            {
-                nev = "milk",
-                kinezet = Milk,
-                StartPosition = new Point(150, 50),
-                TargetPosition = new Point(200, 300)
-            });
-
-            // kezdő pozíciók beállítása
-            foreach (var ing in ingredients)
-            {
-                Canvas.SetLeft(ing.kinezet, ing.StartPosition.X);
-                Canvas.SetTop(ing.kinezet, ing.StartPosition.Y);
-
-                // hozzárendeljük az egér eseményeket
-                ing.kinezet.MouseDown += MouseDown;
-                ing.kinezet.MouseMove += MouseMove;
-            }
-        }
-
-        public void section1()
-        {
-            List<hozzávaló> section1 = new List<hozzávaló>();
-            section1.Add(new hozzávaló
-            {
-                nev = "egg",
-                kinezet = Egg,
-                StartPosition = new Point(50, 50),
-                TargetPosition = new Point(100, 300)
-            });
-
-            section1.Add(new hozzávaló
-            {
-                nev = "milk",
-                kinezet = Milk,
-                StartPosition = new Point(150, 50),
-                TargetPosition = new Point(200, 300)
-            });
         }
     }
 }
