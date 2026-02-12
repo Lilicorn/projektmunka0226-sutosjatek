@@ -21,12 +21,20 @@ namespace ALegjobbSutosJatekProjekt
     /// </summary>
     /// 
 
-    public class hozzávaló
+    public class ingredient
     {
-        public string nev { get; set; }
-        public string imagepath { get; set; }
-        public Point StartPosition { get; set; }
-        public string targettag { get; set; }
+        public string TagName { get; set; }
+        public string ImageSource { get; set; }
+        public int stepIndex { get; set; }
+        public string TargetTag { get; set; }
+
+        public ingredient(string tag, string src, int ind, string target)
+        {
+            TagName = tag;
+            ImageSource = src;
+            stepIndex = ind;
+            TargetTag = target;
+        }
     }
 
 
@@ -38,11 +46,10 @@ namespace ALegjobbSutosJatekProjekt
             InitializeComponent();
         }
 
+        //wpf logikak uyg nagjabol eeehehehehehhhehhhheeee
         Image eredetihely = null;
         Image huzigalt = null;
         Point offset;
-
-
         private void MouseDown(object sender, MouseButtonEventArgs e)
         {
             eredetihely = sender as Image;
@@ -52,21 +59,22 @@ namespace ALegjobbSutosJatekProjekt
             huzigalt.Source = eredetihely.Source;
             huzigalt.Width = eredetihely.Width;
             huzigalt.Height = eredetihely.Height;
+            huzigalt.Tag = eredetihely.Tag;
 
             // Pozíció kiszámolás
-            Point position = e.GetPosition(Table);
+            Point position = e.GetPosition(background);
             offset = new Point(huzigalt.Width / 2, huzigalt.Height / 2);
 
             Canvas.SetLeft(huzigalt, position.X - offset.X);
             Canvas.SetTop(huzigalt, position.Y - offset.Y);
 
-            Table.Children.Add(huzigalt);
+            background.Children.Add(huzigalt);
 
             eredetihely.Opacity = 0.3;
 
-            Table.MouseMove += MouseMove;
-            Table.MouseLeftButtonUp += MouseUp;
-            Table.CaptureMouse();
+            background.MouseMove += MouseMove;
+            background.MouseLeftButtonUp += MouseUp;
+            background.CaptureMouse();
 
         }
 
@@ -74,7 +82,7 @@ namespace ALegjobbSutosJatekProjekt
         {
             if (huzigalt == null) return;
 
-            Point position = e.GetPosition(Table);
+            Point position = e.GetPosition(background);
 
             Canvas.SetLeft(huzigalt, position.X - offset.X);
             Canvas.SetTop(huzigalt, position.Y - offset.Y);
@@ -91,7 +99,7 @@ namespace ALegjobbSutosJatekProjekt
                 huzigalt.Height);
 
 
-            GeneralTransform transform = Usualtarget.TransformToVisual(Table);
+            GeneralTransform transform = Usualtarget.TransformToVisual(background);
             Point topLeft = transform.Transform(new Point(0, 0));
 
             Rect targetRect = new Rect(
@@ -100,24 +108,33 @@ namespace ALegjobbSutosJatekProjekt
                 Usualtarget.ActualWidth,
                 Usualtarget.ActualHeight);
 
-
+            //var leccimukodj = hozzávalók.FirstOrDefault(h => h.TagName == (string)huzigalt.Tag);
+            //if (leccimukodj.TargetTag==(string)Usualtarget.Tag
             if (draggedRect.IntersectsWith(targetRect))
             {
                 MessageBox.Show("Belekerült a tálba! 🎉");
-                Table.Children.Remove(huzigalt);
+                background.Children.Remove(huzigalt);
             }
             else
             {
-                Table.Children.Remove(huzigalt);
+                background.Children.Remove(huzigalt);
                 eredetihely.Opacity = 1;
             }
 
             huzigalt = null;
             eredetihely = null;
 
-            Table.MouseMove -= MouseMove;
-            Table.MouseLeftButtonUp -= MouseUp;
-            Table.ReleaseMouseCapture();
+            background.MouseMove -= MouseMove;
+            background.MouseLeftButtonUp -= MouseUp;
+            background.ReleaseMouseCapture();
+
+        }
+
+        //mi dolgaink
+        List<ingredient> hozzávalók = new List<ingredient>();
+        public void Section1()
+        {
+            hozzávalók.Clear();
 
         }
 
