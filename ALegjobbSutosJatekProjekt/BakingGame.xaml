@@ -9,17 +9,64 @@
       Title="BakingGame">
 
     <Grid>
-        <Canvas x:Name="GameCanvas" Background="Beige">
 
-            <Image x:Name="Bowl1" Tag="Bowl1" Source="/bowl1.jpg" Width="155" Canvas.Left="387" Canvas.Top="150" Height="150"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
 
-            <Image x:Name="Egg" Tag="Egg" Source="/egg.jpg" Width="100" Canvas.Left="648" Canvas.Top="115"/>
 
-            <Image x:Name="Milk" Tag="Milk" Source="/milk.jpg" Width="100" Canvas.Left="568" Canvas.Top="115"/>
+        <Label FontSize="30" Panel.ZIndex="1" x:Name="Instructions" Content="placeholder" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
 
-            <Canvas Height="160" x:Name="Table" Background="#FFD06767" Width="900" Canvas.Left="-50" Canvas.Top="360"/>
+                <Grid Grid.Column="1" x:Name="ingredientsection" Background="Transparent" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" x:Name="ingredient1" Tag="" Source="/egg.jpg" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp"/>
+                        <Image Grid.Column="1" x:Name="ingredient3" Tag="" Source="/egg.jpg" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp"/>
+                        <Image Grid.Column="2" x:Name="ingredient5" Tag="" Source="/egg.jpg" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp"/>
 
-        </Canvas>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="1" x:Name="ingredient2" Tag="" Source="/egg.jpg" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp" />
+                        <Image Grid.Column="2" x:Name="ingredient4" Tag="" Source="/egg.jpg" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp"/>
+
+                    </Grid>
+                </Grid>
+                <Image Grid.Column="2" x:Name="usualtarget" Tag="" Source="/bowl1.jpg"/>
+
+            </Grid>
+
+            <Canvas x:Name="Table" Panel.ZIndex="-1" Background="#FFD06767" >
+            </Canvas>
+
+        </Grid>
+
+        <Canvas  x:Name="background" Background="Beige"/>
+
 
     </Grid>
 </Page>

@@ -38,40 +38,35 @@ namespace ALegjobbSutosJatekProjekt
             InitializeComponent();
         }
 
-
-        Image huzigalando = null;
-        bool huzigalszevalamit = false;
-        Point pozisön;
-
-        List<hozzávaló> ingredients = new List<hozzávaló>();
+        Image eredetihely = null;
+        Image huzigalt = null;
+        Point offset;
 
 
         private void MouseDown(object sender, MouseButtonEventArgs e)
         {
-            huzigalando = sender as Image;
-            huzigalszevalamit = true;
-            pozisön = e.GetPosition(GameCanvas);
+            eredetihely = sender as Image;
+
+            // Klón létrehozása
+            huzigalt = new Image();
+            huzigalt.Source = eredetihely.Source;
+            huzigalt.Width = eredetihely.Width;
+            huzigalt.Height = eredetihely.Height;
+
+            // Pozíció kiszámolás
+            Point position = e.GetPosition(Table);
+            offset = new Point(draggedImage.Width / 2, draggedImage.Height / 2);
+
+            Canvas.SetLeft(draggedImage, position.X - offset.X);
+            Canvas.SetTop(draggedImage, position.Y - offset.Y);
+
+            Table.Children.Add(draggedImage);
+
+            originalImage.Opacity = 0.3;
+
+            Table.MouseMove += Table_MouseMove;
+            Table.MouseLeftButtonUp += Table_MouseUp;
         }
 
-        private void MouseMove(object sender, MouseEventArgs e)
-        {
-
-            if (!huzigalszevalamit && huzigalando == null)
-            {
-                return;
-            }
-                var position = e.GetPosition(GameCanvas);
-                Canvas.SetLeft(huzigalando, position.X - (huzigalando.ActualWidth / 2));
-                Canvas.SetTop(huzigalando, position.Y - (huzigalando.ActualHeight / 2));
-           
-
-        }
-
-        private bool IsInTargetArea(Point current, Point target)
-        {
-            double tolerance = 50; // +/- 20 pixel pontosság
-            return Math.Abs(current.X - target.X) < tolerance &&
-                   Math.Abs(current.Y - target.Y) < tolerance;
-        }
     }
 }
