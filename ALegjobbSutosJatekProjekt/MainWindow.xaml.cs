@@ -24,6 +24,7 @@ namespace ALegjobbSutosJatekProjekt
         {
             InitializeComponent();
             Minden.Navigate(new IntroPage());
+
         }
     }
 }
