@@ -140,6 +140,8 @@ namespace ALegjobbSutosJatekProjekt
                         eredetihely.Opacity = 0.3;
                         repeater = 0;
                         Instructions.Content = hozzávalók[step].instructionsText;
+                        Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
+
 
 
                     }
@@ -155,8 +157,11 @@ namespace ALegjobbSutosJatekProjekt
                 {
                     eredetihely.Opacity = 0.3;
                     step++;
+
                     if(step!= hozzávalók.Count)
                     {
+                        Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
+
                         Instructions.Content = hozzávalók[step].instructionsText;
                     }
                 }
@@ -172,6 +177,8 @@ namespace ALegjobbSutosJatekProjekt
             if (step == hozzávalók.Count)
             {
                 section++;
+                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
+
                 switch (section)
                 {
                     default: Section1(); break;
@@ -205,7 +212,7 @@ namespace ALegjobbSutosJatekProjekt
         {
             theCleaner();
 
-            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.jpg", UriKind.Relative)); // majd itt frisiitjuk step es sectiona lapjan
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.png", UriKind.Relative));
             
             hozzávalók.Add(new ingredient("egg", "/ingredientassets/egg.jpg", 0, "add egg"));
             hozzávalók.Add(new ingredient("milk", "/ingredientassets/milk.jpg", 1, "add milk"));
@@ -218,8 +225,6 @@ namespace ALegjobbSutosJatekProjekt
         {
            
             theCleaner();
-
-            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.jpg", UriKind.Relative));
 
             hozzávalók.Add(new ingredient("eggs", "/ingredientassets/eggcarton_", 0, 3, "add eggs x"));
             hozzávalók.Add(new ingredient("milk", "/ingredientassets/woodenspoon.jpg", 1, "stir"));
