@@ -240,9 +240,9 @@ namespace ALegjobbSutosJatekProjekt
             Usualtarget.Source = new BitmapImage(new Uri("/assets/bowl1.jpg", UriKind.Relative));
 
             hozzávalók.Add(new ingredient("eggs", "/assets/eggcarton_", 0, 3, "add eggs x3"));
-            hozzávalók.Add(new ingredient("milk", "/assets/woodenspoon.jpg", 1, "add milk again"));
-            hozzávalók.Add(new ingredient("spoon", "/assets/woodenspoon.jpg", 2, "stir"));
-            hozzávalók.Add(new ingredient("balls", "/assets/woodenspoon.jpg", 3, "stir again?"));
+            hozzávalók.Add(new ingredient("milk", "/assets/woodenspoon.jpg", 1, "stir"));
+            hozzávalók.Add(new ingredient("spoon", "/assets/woodenspoon.jpg", 2, "stir again"));
+            hozzávalók.Add(new ingredient("balls", "/assets/woodenspoon.jpg", 3, "i said stir hoe"));
             hozzávalók.Add(new ingredient("???", "/assets/mxstery.gif", 4, "paradox by exmidsion"));
 
             for (int i = 0; i < hozzávalók.Count; i++)
