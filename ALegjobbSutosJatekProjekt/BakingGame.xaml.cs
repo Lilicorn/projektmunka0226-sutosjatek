@@ -205,11 +205,11 @@ namespace ALegjobbSutosJatekProjekt
         {
             theCleaner();
 
-            Usualtarget.Source = new BitmapImage(new Uri("/assets/bowl1.jpg", UriKind.Relative));
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.jpg", UriKind.Relative)); // majd itt frisiitjuk step es sectiona lapjan
             
-            hozzávalók.Add(new ingredient("egg", "/assets/egg.jpg", 0, "add egg"));
-            hozzávalók.Add(new ingredient("milk", "/assets/milk.jpg", 1, "add milk"));
-            hozzávalók.Add(new ingredient("???", "/assets/mxstery.gif", 2, "add construction gif"));
+            hozzávalók.Add(new ingredient("egg", "/ingredientassets/egg.jpg", 0, "add egg"));
+            hozzávalók.Add(new ingredient("milk", "/ingredientassets/milk.jpg", 1, "add milk"));
+            hozzávalók.Add(new ingredient("???", "/ingredientassets/mxstery.gif", 2, "add construction gif"));
 
             theFiller();
         }
@@ -219,13 +219,13 @@ namespace ALegjobbSutosJatekProjekt
            
             theCleaner();
 
-            Usualtarget.Source = new BitmapImage(new Uri("/assets/bowl1.jpg", UriKind.Relative));
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.jpg", UriKind.Relative));
 
-            hozzávalók.Add(new ingredient("eggs", "/assets/eggcarton_", 0, 3, "add eggs x"));
-            hozzávalók.Add(new ingredient("milk", "/assets/woodenspoon.jpg", 1, "stir"));
-            hozzávalók.Add(new ingredient("spoon", "/assets/woodenspoon.jpg", 2, "stir again"));
-            hozzávalók.Add(new ingredient("balls", "/assets/woodenspoon.jpg", 3, "i said stir hoe"));
-            hozzávalók.Add(new ingredient("???", "/assets/mxstery.gif", 4, "the paradox by exmidsion"));
+            hozzávalók.Add(new ingredient("eggs", "/ingredientassets/eggcarton_", 0, 3, "add eggs x"));
+            hozzávalók.Add(new ingredient("milk", "/ingredientassets/woodenspoon.jpg", 1, "stir"));
+            hozzávalók.Add(new ingredient("spoon", "/ingredientassets/woodenspoon.jpg", 2, "stir again"));
+            hozzávalók.Add(new ingredient("balls", "/ingredientassets/woodenspoon.jpg", 3, "i said stir hoe"));
+            hozzávalók.Add(new ingredient("???", "/ingredientassets/mxstery.gif", 4, "construciton gif dubstep !!!!!"));
             
             theFiller();
 
