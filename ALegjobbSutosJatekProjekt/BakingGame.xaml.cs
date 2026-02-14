@@ -203,11 +203,7 @@ namespace ALegjobbSutosJatekProjekt
 
         public void Section1()
         {
-            hozzávalók.Clear();
-            step = 0;
-            repeater = 0;
-            foreach (var i in ingredientSlots) { i.Opacity = 1; i.Source = null; i.Tag = ""; }
-
+            theCleaner();
 
             Usualtarget.Source = new BitmapImage(new Uri("/assets/bowl1.jpg", UriKind.Relative));
             
@@ -215,35 +211,14 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("milk", "/assets/milk.jpg", 1, "add milk"));
             hozzávalók.Add(new ingredient("???", "/assets/mxstery.gif", 2, "add construction gif"));
 
-            for (int i = 0; i < hozzávalók.Count; i++)
-            {
-                if (hozzávalók[i].Repeats > 1)
-                {
-                    ingredientSlots[i].Source = new BitmapImage(new Uri($"{hozzávalók[i].ImageSource}0.png", UriKind.Relative));
-                    
-                }
-                else
-                {
-                    ingredientSlots[i].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative));
-                }
-                ingredientSlots[i].Tag = hozzávalók[i].TagName;
-            }
-            Instructions.Content = hozzávalók[step].instructionsText;
-            if (hozzávalók[step].Repeats > 1)
-            {
-                Instructions.Content += hozzávalók[step].Repeats.ToString();
-            }
+            theFiller();
         }
 
         public void Section2()
         {
-            hozzávalók.Clear();
-            step = 0;
-            repeater = 0;
-            foreach(var i in ingredientSlots) { i.Opacity = 1; i.Source = null; i.Tag = ""; }
+           
+            theCleaner();
 
-
-            Usualtarget.Tag = "bowl";
             Usualtarget.Source = new BitmapImage(new Uri("/assets/bowl1.jpg", UriKind.Relative));
 
             hozzávalók.Add(new ingredient("eggs", "/assets/eggcarton_", 0, 3, "add eggs x"));
@@ -251,28 +226,8 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("spoon", "/assets/woodenspoon.jpg", 2, "stir again"));
             hozzávalók.Add(new ingredient("balls", "/assets/woodenspoon.jpg", 3, "i said stir hoe"));
             hozzávalók.Add(new ingredient("???", "/assets/mxstery.gif", 4, "the paradox by exmidsion"));
-
-            for (int i = 0; i < hozzávalók.Count; i++)
-            {
-                if (hozzávalók[i].Repeats > 1)
-                {
-                    ingredientSlots[i].Source = new BitmapImage(new Uri($"{hozzávalók[i].ImageSource}0.png", UriKind.Relative));
-
-                }
-                else
-                {
-                    ingredientSlots[i].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative));
-
-                }
-                
-                ingredientSlots[i].Tag = hozzávalók[i].TagName;
-            }
-            Instructions.Content = hozzávalók[step].instructionsText;
-            if(hozzávalók[step].Repeats > 1)
-            {
-                Instructions.Content += hozzávalók[step].Repeats.ToString();
-            }
-
+            
+            theFiller();
 
         }
 
@@ -281,7 +236,38 @@ namespace ALegjobbSutosJatekProjekt
             Instructions.Content = "congrats bitch";
             Thread.Sleep(2000);
             NavigationService.Navigate(new OutroPage());
+        }
 
+
+        public void theCleaner()
+        {
+            hozzávalók.Clear();
+            step = 0;
+            repeater = 0;
+            foreach (var i in ingredientSlots) { i.Opacity = 1; i.Source = null; i.Tag = ""; }
+        }
+
+        public void theFiller()
+        {
+            for (int i = 0; i < hozzávalók.Count; i++)
+            {
+                if (hozzávalók[i].Repeats > 1)
+                {
+                    ingredientSlots[i].Source = new BitmapImage(new Uri($"{hozzávalók[i].ImageSource}0.png", UriKind.Relative));
+
+                }
+                else
+                {
+                    ingredientSlots[i].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative));
+                }
+
+                ingredientSlots[i].Tag = hozzávalók[i].TagName;
+            }
+            Instructions.Content = hozzávalók[step].instructionsText;
+            if (hozzávalók[step].Repeats > 1)
+            {
+                Instructions.Content += hozzávalók[step].Repeats.ToString();
+            }
         }
 
     }
