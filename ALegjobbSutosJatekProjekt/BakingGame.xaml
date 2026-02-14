@@ -17,7 +17,7 @@
 
 
         <Label FontSize="30" Panel.ZIndex="1" x:Name="Instructions" Content="placeholder" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-        
+
         <Grid Grid.Row="1">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -38,9 +38,9 @@
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" x:Name="ingredient0" Tag="" Source="/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp" />
-                        <Image Grid.Column="1" x:Name="ingredient2" Tag="" Source="/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp"/>
-                        <Image Grid.Column="2" x:Name="ingredient4" Tag="" Source="/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp"/>
+                        <Image Grid.Column="0" x:Name="ingredient0" Tag="" Source="/assets/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp" />
+                        <Image Grid.Column="1" x:Name="ingredient2" Tag="" Source="/assets/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp"/>
+                        <Image Grid.Column="2" x:Name="ingredient4" Tag="" Source="/assets/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown" MouseMove="MouseMove" MouseUp="MouseUp"/>
 
                     </Grid>
 
@@ -51,8 +51,8 @@
                             <ColumnDefinition Width="2*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="1" x:Name="ingredient1" Tag="" Source="/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown"/>
-                        <Image Grid.Column="2" x:Name="ingredient3" Tag="" Source="/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="1" x:Name="ingredient1" Tag="" Source="/assets/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="2" x:Name="ingredient3" Tag="" Source="/assets/ingplaceholder.JPG" Width="128" Height="128" MouseLeftButtonDown="MouseDown"/>
 
                     </Grid>
                 </Grid>
@@ -60,11 +60,11 @@
 
             </Grid>
 
-            <Image  Panel.ZIndex="-1" Source="/eggcarton.jpg" Stretch="Fill"  />
+            <Image  Panel.ZIndex="-1" Source="/assets/eggcarton.jpg" Stretch="Fill"  />
 
         </Grid>
 
-        <Image Source="/mxstery.gif" Stretch="UniformToFill"></Image>
+        <Image Source="/assets/mxstery.gif" Stretch="UniformToFill"></Image>
         <Canvas Panel.ZIndex="0" x:Name="background" Background="Transparent"/>
 
 

@@ -26,15 +26,24 @@ namespace ALegjobbSutosJatekProjekt
         public string TagName { get; set; }
         public string ImageSource { get; set; }
         public int StepIndex { get; set; }
-        public string TargetTag { get; set; }
+        public int Repeats { get; set; }
+        public string  instructionsText { get; set; }
 
-        public ingredient(string tag, string src, int ind, string target)
+        public ingredient(string tag, string src, int ind, string instructions)
         {
             TagName = tag;
             ImageSource = src;
             StepIndex = ind;
-            TargetTag = target;
-
+            Repeats = 1;
+            instructionsText = instructions;
+        }
+        public ingredient(string tag, string src, int ind, int repeat, string instructions)
+        {
+            TagName = tag;
+            ImageSource = src;
+            StepIndex = ind;
+            Repeats = repeat;
+            instructionsText = instructions;
         }
     }
 
@@ -115,20 +124,46 @@ namespace ALegjobbSutosJatekProjekt
                 Usualtarget.ActualHeight);
 
             var leccimukodj = hozzávalók.FirstOrDefault(h => h.TagName == (string)huzigalt.Tag);
-            //if (leccimukodj.TargetTag==(string)Usualtarget.Tag
-            
-            
             
             if (leccimukodj != null && leccimukodj.StepIndex == step && draggedRect.IntersectsWith(targetRect))
             {
-                MessageBox.Show("Belekerült a tálba! 🎉");
                 background.Children.Remove(huzigalt);
-                step++;
+                if (leccimukodj.Repeats > 1)
+                {
+                    repeater++;
+
+                    if (repeater >= leccimukodj.Repeats)
+                    {
+                        step++;
+                        ingredientSlots[leccimukodj.StepIndex].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
+                        eredetihely.Opacity = 0.3;
+                        repeater = 0;
+                        Instructions.Content = hozzávalók[step].instructionsText;
+
+
+                    }
+                    else
+                    {
+                        ingredientSlots[leccimukodj.StepIndex].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
+                        eredetihely.Opacity = 1;
+                    }
+                }
+                else
+                {
+                    eredetihely.Opacity = 0.3;
+                    step++;
+                    if(step!= hozzávalók.Count)
+                    {
+                        Instructions.Content = hozzávalók[step].instructionsText;
+                    }
+                }
+
             }
             else if(step != hozzávalók.Count)
             {
                 background.Children.Remove(huzigalt);
                 eredetihely.Opacity = 1;
+
             }
 
             if (step == hozzávalók.Count)
@@ -157,28 +192,39 @@ namespace ALegjobbSutosJatekProjekt
         //mi dolgaink
         List<ingredient> hozzávalók = new List<ingredient>();
         int step = 0;
+        int repeater = 0;
         int section = 1;
+
+        
 
         public void Section1()
         {
             hozzávalók.Clear();
             step = 0;
+            repeater = 0;
             foreach (var i in ingredientSlots) { i.Opacity = 1; i.Source = null; i.Tag = ""; }
 
 
-
-            Usualtarget.Tag = "bowl";
-            Usualtarget.Source = new BitmapImage(new Uri("/bowl1.jpg", UriKind.Relative));
+            Usualtarget.Source = new BitmapImage(new Uri("/assets/bowl1.jpg", UriKind.Relative));
             
-            hozzávalók.Add(new ingredient("egg", "/egg.jpg", 0, "bowl"));
-            hozzávalók.Add(new ingredient("milk", "/milk.jpg", 1, "bowl"));
-            hozzávalók.Add(new ingredient("???", "/mxstery.gif", 2, "bowl"));
-            for(int i =0; i<hozzávalók.Count; i++)
+            hozzávalók.Add(new ingredient("egg", "/assets/egg.jpg", 0, "add egg"));
+            hozzávalók.Add(new ingredient("milk", "/assets/milk.jpg", 1, "add milk"));
+            hozzávalók.Add(new ingredient("???", "/assets/mxstery.gif", 2, "add construction gif"));
+
+            for (int i = 0; i < hozzávalók.Count; i++)
             {
-                ingredientSlots[i].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative)); 
+                if (hozzávalók[i].Repeats > 1)
+                {
+                    ingredientSlots[i].Source = new BitmapImage(new Uri($"{hozzávalók[i].ImageSource}{repeater}.png", UriKind.Relative));
+                }
+                else
+                {
+                    ingredientSlots[i].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative));
+                }
                 ingredientSlots[i].Tag = hozzávalók[i].TagName;
             }
 
+            Instructions.Content = hozzávalók[step].instructionsText;
 
         }
 
@@ -186,27 +232,39 @@ namespace ALegjobbSutosJatekProjekt
         {
             hozzávalók.Clear();
             step = 0;
+            repeater = 0;
             foreach(var i in ingredientSlots) { i.Opacity = 1; i.Source = null; i.Tag = ""; }
 
 
             Usualtarget.Tag = "bowl";
-            Usualtarget.Source = new BitmapImage(new Uri("/bowl1.jpg", UriKind.Relative));
+            Usualtarget.Source = new BitmapImage(new Uri("/assets/bowl1.jpg", UriKind.Relative));
 
-            hozzávalók.Add(new ingredient("egg", "/eggcarton.jpg", 0, "bowl"));
-            hozzávalók.Add(new ingredient("milk", "/woodenspoon.jpg", 1, "bowl"));
-            hozzávalók.Add(new ingredient("sppon", "/woodenspoon.jpg", 2, "bowl"));
-            hozzávalók.Add(new ingredient("balls", "/woodenspoon.jpg", 3, "bowl"));
-            hozzávalók.Add(new ingredient("???", "/mxstery.gif", 4, "bowl"));
+            hozzávalók.Add(new ingredient("eggs", "/assets/eggcarton_", 0, 3, "add eggs x3"));
+            hozzávalók.Add(new ingredient("milk", "/assets/woodenspoon.jpg", 1, "add milk again"));
+            hozzávalók.Add(new ingredient("spoon", "/assets/woodenspoon.jpg", 2, "stir"));
+            hozzávalók.Add(new ingredient("balls", "/assets/woodenspoon.jpg", 3, "stir again?"));
+            hozzávalók.Add(new ingredient("???", "/assets/mxstery.gif", 4, "paradox by exmidsion"));
+
             for (int i = 0; i < hozzávalók.Count; i++)
             {
-                ingredientSlots[i].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative));
+                if (hozzávalók[i].Repeats > 1)
+                {
+                    ingredientSlots[i].Source = new BitmapImage(new Uri($"{hozzávalók[i].ImageSource}0.png", UriKind.Relative));
+                }
+                else
+                {
+                    ingredientSlots[i].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative));
+                }
                 ingredientSlots[i].Tag = hozzávalók[i].TagName;
             }
+
+            Instructions.Content = hozzávalók[step].instructionsText;
+
         }
 
         public void ending()
         {
-            MessageBox.Show("Gratulálok, elkészült a süti! 🎉🍪");
+            Instructions.Content = "congrats bitch";
             NavigationService.Navigate(new OutroPage());
 
         }
