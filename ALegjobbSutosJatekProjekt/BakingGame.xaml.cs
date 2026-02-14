@@ -243,7 +243,7 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("milk", "/assets/woodenspoon.jpg", 1, "stir"));
             hozzávalók.Add(new ingredient("spoon", "/assets/woodenspoon.jpg", 2, "stir again"));
             hozzávalók.Add(new ingredient("balls", "/assets/woodenspoon.jpg", 3, "i said stir hoe"));
-            hozzávalók.Add(new ingredient("???", "/assets/mxstery.gif", 4, "paradox by exmidsion"));
+            hozzávalók.Add(new ingredient("???", "/assets/mxstery.gif", 4, "the paradox by exmidsion"));
 
             for (int i = 0; i < hozzávalók.Count; i++)
             {
