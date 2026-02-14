@@ -177,6 +177,7 @@ namespace ALegjobbSutosJatekProjekt
             if (step == hozzávalók.Count)
             {
                 section++;
+                step = 0;
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
 
                 switch (section)
