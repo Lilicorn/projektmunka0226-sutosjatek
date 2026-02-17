@@ -138,7 +138,6 @@
     <Resource Include="targetassets\1_1.png" />
     <Resource Include="targetassets\1_2.png" />
     <Resource Include="targetassets\1_3.png" />
-    <Resource Include="targetassets\2_0.png" />
     <Resource Include="targetassets\2_1.png" />
     <Resource Include="targetassets\2_2.png" />
     <Resource Include="targetassets\2_3.png" />
@@ -152,6 +151,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="targetassets\end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_0_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_0_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_0_2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
