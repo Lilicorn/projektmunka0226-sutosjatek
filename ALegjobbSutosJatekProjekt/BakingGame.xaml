@@ -56,7 +56,7 @@
 
                     </Grid>
                 </Grid>
-                <Image Source="/targetassets/1_0.png" Grid.Column="2" x:Name="Usualtarget" Tag=""/>
+                <Image Source="/targetassets/1_0.png" Margin="15pt" Grid.Column="2" x:Name="Usualtarget" Tag=""/>
 
             </Grid>
 
