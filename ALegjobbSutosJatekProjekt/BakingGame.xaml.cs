@@ -224,17 +224,21 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("eggs", "/ingredientassets/eggcarton_", 0, 3, "add eggs x"));
             hozzávalók.Add(new ingredient("milk", "/ingredientassets/woodenspoon.jpg", 1, "stir"));
             hozzávalók.Add(new ingredient("spoon", "/ingredientassets/woodenspoon.jpg", 2, "stir again"));
-            hozzávalók.Add(new ingredient("balls", "/ingredientassets/woodenspoon.jpg", 3, "i said stir hoe"));
+            hozzávalók.Add(new ingredient("balls", "/ingredientassets/woodenspoon.jpg", 3, "i said stir b"));
             hozzávalók.Add(new ingredient("???", "/ingredientassets/mxstery.gif", 4, "construciton gif dubstep !!!!!"));
             
             theFiller();
 
         }
 
-        public void ending()
+        public async void ending() // async kulcsszó hozzáadva
         {
-            Instructions.Content = "congrats bitch";
-            Thread.Sleep(2000);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
+            Instructions.Content = "congratulato";
+
+            // Ez engedi a UI-nak, hogy frissüljön, mielőtt várnánk
+            await Task.Delay(2000);
+
             NavigationService.Navigate(new OutroPage());
         }
 
