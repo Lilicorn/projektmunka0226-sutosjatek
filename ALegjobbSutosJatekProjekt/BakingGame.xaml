@@ -60,11 +60,11 @@
 
             </Grid>
 
-            <Image  Panel.ZIndex="-1" Source="/background2.png" Stretch="Fill"  />
+            <Image  Panel.ZIndex="-1" Source="/otherassets/background2.png" Stretch="Fill"  />
 
         </Grid>
 
-        <Image Source="/background1.png" Stretch="UniformToFill"></Image>
+        <Image Source="/otherassets/background1.png" Stretch="UniformToFill"></Image>
         <Canvas Panel.ZIndex="0" x:Name="background" Background="Transparent"/>
 
 

@@ -73,8 +73,8 @@ namespace ALegjobbSutosJatekProjekt
             // Klón létrehozása
             huzigalt = new Image();
             huzigalt.Source = eredetihely.Source;
-            huzigalt.Width = eredetihely.Width;
-            huzigalt.Height = eredetihely.Height;
+            huzigalt.Width = 128;
+            huzigalt.Height = 128;
             huzigalt.Tag = eredetihely.Tag;
 
             // Pozíció kiszámolás
@@ -140,8 +140,7 @@ namespace ALegjobbSutosJatekProjekt
                         eredetihely.Opacity = 0.3;
                         repeater = 0;
                         Instructions.Content = hozzávalók[step].instructionsText;
-                        Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
-
+                        usualtargetupdater();
 
 
                     }
@@ -160,8 +159,7 @@ namespace ALegjobbSutosJatekProjekt
 
                     if(step!= hozzávalók.Count)
                     {
-                        Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
-
+                        usualtargetupdater();
                         Instructions.Content = hozzávalók[step].instructionsText;
                     }
                 }
@@ -178,8 +176,7 @@ namespace ALegjobbSutosJatekProjekt
             {
                 section++;
                 step = 0;
-                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
-
+                usualtargetupdater();
                 switch (section)
                 {
                     default: Section1(); break;
@@ -214,7 +211,7 @@ namespace ALegjobbSutosJatekProjekt
             theCleaner();
 
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.png", UriKind.Relative));
-            
+           
             hozzávalók.Add(new ingredient("egg", "/ingredientassets/egg.jpg", 0, "add egg"));
             hozzávalók.Add(new ingredient("milk", "/ingredientassets/milk.jpg", 1, "add milk"));
             hozzávalók.Add(new ingredient("???", "/ingredientassets/mxstery.gif", 2, "add construction gif"));
@@ -234,6 +231,8 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("???", "/ingredientassets/mxstery.gif", 4, "construciton gif dubstep !!!!!"));
             
             theFiller();
+
+            usualtargetupdater();
 
         }
 
@@ -277,6 +276,20 @@ namespace ALegjobbSutosJatekProjekt
             if (hozzávalók[step].Repeats > 1)
             {
                 Instructions.Content += hozzávalók[step].Repeats.ToString();
+            }
+        }
+        public void usualtargetupdater()
+        {
+            if (step >= hozzávalók.Count) {  return; }
+            if (hozzávalók[step].Repeats > 1)
+            {
+                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
+
+            }
+            else
+            {
+                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
+
             }
         }
 
