@@ -27,7 +27,8 @@ namespace ALegjobbSutosJatekProjekt
 
         private void Play_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BakingGame());
+
+            NavigationService.Navigate(new TransitionPage());
         }
     }
 }

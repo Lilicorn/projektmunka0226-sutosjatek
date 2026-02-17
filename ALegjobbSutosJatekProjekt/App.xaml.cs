@@ -13,5 +13,6 @@ namespace ALegjobbSutosJatekProjekt
     /// </summary>
     public partial class App : Application
     {
+        public static int phase { get; set; } = 1;
     }
 }

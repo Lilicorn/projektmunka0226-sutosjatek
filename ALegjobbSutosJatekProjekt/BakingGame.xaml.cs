@@ -73,8 +73,8 @@ namespace ALegjobbSutosJatekProjekt
             // Klón létrehozása
             huzigalt = new Image();
             huzigalt.Source = eredetihely.Source;
-            huzigalt.Width = 128;
-            huzigalt.Height = 128;
+            huzigalt.Width = eredetihely.ActualWidth;
+            huzigalt.Height = eredetihely.ActualHeight;
             huzigalt.Tag = eredetihely.Tag;
 
             // Pozíció kiszámolás
@@ -177,6 +177,7 @@ namespace ALegjobbSutosJatekProjekt
                 section++;
                 step = 0;
                 usualtargetupdater();
+                
                 switch (section)
                 {
                     default: Section1(); break;
@@ -236,13 +237,19 @@ namespace ALegjobbSutosJatekProjekt
 
         }
 
-        public async void ending() // async kulcsszó hozzáadva
+
+        public async void wait(int ms) //leroviditem hi
+        {
+            await Task.Delay(ms);
+        }
+
+        public void ending()
         {
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
             Instructions.Content = "congratulato";
+            App.phase= 2;
 
-            // Ez engedi a UI-nak, hogy frissüljön, mielőtt várnánk
-            await Task.Delay(2000);
+            wait(2000); 
 
             NavigationService.Navigate(new OutroPage());
         }
