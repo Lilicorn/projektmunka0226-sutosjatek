@@ -26,10 +26,8 @@ namespace ALegjobbSutosJatekProjekt
             InitializeComponent();
         }
 
-        private void Play_Click(object sender, RoutedEventArgs e)
-        {
-
-            NavigationService.Navigate(new TransitionPage());
+        private void Play_Click(object sender, RoutedEventArgs e) { 
+               NavigationService.Navigate(new TransitionPage());
         }
 
 

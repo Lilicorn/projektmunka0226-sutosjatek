@@ -136,7 +136,7 @@ namespace ALegjobbSutosJatekProjekt
                     if (repeater >= leccimukodj.Repeats)
                     {
                         step++;
-                        ingredientSlots[leccimukodj.StepIndex].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
+                        ingredientSlots[leccimukodj.StepIndex + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
                         eredetihely.Opacity = 0.3;
                         repeater = 0;
                         Instructions.Content = hozzávalók[step].instructionsText;
@@ -146,7 +146,7 @@ namespace ALegjobbSutosJatekProjekt
                     }
                     else
                     {
-                        ingredientSlots[leccimukodj.StepIndex].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
+                        ingredientSlots[leccimukodj.StepIndex + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
                         eredetihely.Opacity = 1;
                         Instructions.Content = $"{hozzávalók[step].instructionsText}{hozzávalók[leccimukodj.StepIndex].Repeats-repeater}";
 
@@ -204,11 +204,14 @@ namespace ALegjobbSutosJatekProjekt
         int step = 0;
         int repeater = 0;
         int section = 1;
+        int picoffset = 0;
 
         
 
         public void Section1()
         {
+            picoffset = 1;
+
             theCleaner();
 
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.png", UriKind.Relative));
@@ -222,7 +225,8 @@ namespace ALegjobbSutosJatekProjekt
 
         public void Section2()
         {
-           
+            picoffset = 0;
+
             theCleaner();
 
             hozzávalók.Add(new ingredient("eggs", "/ingredientassets/eggcarton_", 0, 3, "add eggs x"));
@@ -237,19 +241,16 @@ namespace ALegjobbSutosJatekProjekt
 
         }
 
+        //HA VALAMIT UJ SECTIONT HOZZAADSZ AKKOR NEZZ RA A SWITCH(SECITON) RE MERT OTT ELFELEJTED MAJD ATIRNI
 
-        public async void wait(int ms) //leroviditem hi
-        {
-            await Task.Delay(ms);
-        }
 
-        public void ending()
+        public async void ending()
         {
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
             Instructions.Content = "congratulato";
             App.phase= 2;
 
-            wait(2000); 
+            await Task.Delay(2000);
 
             NavigationService.Navigate(new OutroPage());
         }
@@ -269,15 +270,15 @@ namespace ALegjobbSutosJatekProjekt
             {
                 if (hozzávalók[i].Repeats > 1)
                 {
-                    ingredientSlots[i].Source = new BitmapImage(new Uri($"{hozzávalók[i].ImageSource}0.png", UriKind.Relative));
+                    ingredientSlots[i + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[i].ImageSource}0.png", UriKind.Relative));
 
                 }
                 else
                 {
-                    ingredientSlots[i].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative));
+                    ingredientSlots[i + picoffset].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative));
                 }
 
-                ingredientSlots[i].Tag = hozzávalók[i].TagName;
+                ingredientSlots[i + picoffset].Tag = hozzávalók[i].TagName;
             }
             Instructions.Content = hozzávalók[step].instructionsText;
             if (hozzávalók[step].Repeats > 1)

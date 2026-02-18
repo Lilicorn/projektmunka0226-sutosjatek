@@ -121,6 +121,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="otherassets\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,6 +142,10 @@
     <Resource Include="ingredientassets\milk.jpg" />
     <Resource Include="ingredientassets\mxstery.gif" />
     <Resource Include="ingredientassets\woodenspoon.jpg" />
+    <Resource Include="otherassets\background1.png" />
+    <Resource Include="otherassets\background2.png" />
+    <Resource Include="otherassets\intrologo.png" />
+    <Resource Include="otherassets\introsprite.png" />
     <Resource Include="targetassets\1_0.png" />
     <Resource Include="targetassets\1_1.png" />
     <Resource Include="targetassets\1_2.png" />
@@ -155,16 +160,8 @@
     <Resource Include="targetassets\end.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="otherassets\background1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="otherassets\background2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="otherassets\intrologo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="otherassets\introsprite.png" />
+    <Resource Include="otherassets\bakingphasebtnthing.png" />
+    <Resource Include="otherassets\decorphasebtnthing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

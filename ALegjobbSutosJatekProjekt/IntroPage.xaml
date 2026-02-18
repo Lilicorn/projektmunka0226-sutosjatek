@@ -30,8 +30,8 @@
             </Grid.RowDefinitions>
 
             <Image Grid.Row="0" Source="\otherassets\intrologo.png" Stretch="Uniform"/>
-            <Button x:Name="play" Grid.Row="1" Content="Play" Width="200" Height="60" Click="Play_Click"/>
-            <Button x:Name="more" Grid.Row="2" Content="MORE" Width="200" Height="60" Click="more_Click"/>
+            <Button x:Name="play" Grid.Row="1" Content="Play" Width="200" Height="60" Click="Play_Click" Style="{StaticResource GameButtonStyle}"/>
+            <Button x:Name="more" Grid.Row="2" Content="MORE" Width="200" Height="60" Click="more_Click" Style="{StaticResource GameButtonStyle}"/>
 
         </Grid>
 

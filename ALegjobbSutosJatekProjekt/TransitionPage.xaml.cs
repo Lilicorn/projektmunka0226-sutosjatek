@@ -23,16 +23,29 @@ namespace ALegjobbSutosJatekProjekt
         public TransitionPage()
         {
             InitializeComponent();
+
+        }
+        private void help(object sender, RoutedEventArgs e)
+        {
             if (App.phase == 1)
             {
-                NavigationService.Navigate(new BakingGame());
-
+                baking.Click += baking_Click;
+                decor.Click -= decor_Click;
             }
+
             else if (App.phase == 2)
             {
-                NavigationService.Navigate(new DecoratingGame());
-
+                baking.Click -= baking_Click;
+                decor.Click += decor_Click;
             }
+        }
+        private void baking_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BakingGame());
+        }
+        private void decor_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DecoratingGame());
         }
     }
 }
