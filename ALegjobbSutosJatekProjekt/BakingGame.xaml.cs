@@ -136,7 +136,7 @@ namespace ALegjobbSutosJatekProjekt
                     if (repeater >= leccimukodj.Repeats)
                     {
                         step++;
-                        ingredientSlots[leccimukodj.StepIndex + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
+                        ingredientSlots[leccimukodj.StepIndex + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative)); // atirtam relativera hogy ne keljen mindent beirni ugh
                         eredetihely.Opacity = 0.3;
                         repeater = 0;
                         Instructions.Content = hozzávalók[step].instructionsText;
