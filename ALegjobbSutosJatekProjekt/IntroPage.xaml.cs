@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace ALegjobbSutosJatekProjekt
 {
@@ -29,6 +30,12 @@ namespace ALegjobbSutosJatekProjekt
         {
 
             NavigationService.Navigate(new TransitionPage());
+        }
+
+
+        private void more_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://sutos.jatek-online.hu/");
         }
     }
 }

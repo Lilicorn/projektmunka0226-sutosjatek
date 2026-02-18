@@ -160,5 +160,11 @@
   <ItemGroup>
     <Resource Include="otherassets\background2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="otherassets\intrologo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="otherassets\introsprite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
