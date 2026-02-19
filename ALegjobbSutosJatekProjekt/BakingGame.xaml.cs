@@ -72,7 +72,17 @@ namespace ALegjobbSutosJatekProjekt
 
             // Klón létrehozása
             huzigalt = new Image();
-            huzigalt.Source = eredetihely.Source;
+            var leccimukodj = hozzávalók.FirstOrDefault(h => h.TagName == (string)eredetihely.Tag);
+            
+            if (leccimukodj.Repeats > 1)
+            {
+                huzigalt.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}single.png", UriKind.Relative));
+            }
+            else 
+            { 
+                huzigalt.Source = eredetihely.Source;
+            }
+
             huzigalt.Width = eredetihely.ActualWidth;
             huzigalt.Height = eredetihely.ActualHeight;
             huzigalt.Tag = eredetihely.Tag;
@@ -139,16 +149,19 @@ namespace ALegjobbSutosJatekProjekt
                         ingredientSlots[leccimukodj.StepIndex + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative)); // atirtam relativera hogy ne keljen mindent beirni ugh
                         eredetihely.Opacity = 0.3;
                         repeater = 0;
-                        Instructions.Content = hozzávalók[step].instructionsText;
-                        usualtargetupdater();
+                        if (step != hozzávalók.Count)
+                        {
+                            instructionupdater();
 
+                            usualtargetupdater();
+                        }
 
                     }
                     else
                     {
                         ingredientSlots[leccimukodj.StepIndex + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
                         eredetihely.Opacity = 1;
-                        Instructions.Content = $"{hozzávalók[step].instructionsText}{hozzávalók[leccimukodj.StepIndex].Repeats-repeater}";
+                        instructionupdater();
 
                     }
                 }
@@ -160,7 +173,8 @@ namespace ALegjobbSutosJatekProjekt
                     if(step!= hozzávalók.Count)
                     {
                         usualtargetupdater();
-                        Instructions.Content = hozzávalók[step].instructionsText;
+                        instructionupdater();
+
                     }
                 }
 
@@ -363,8 +377,36 @@ namespace ALegjobbSutosJatekProjekt
         //section ami csak valt 2-3 kepet a kesz tortarol
         public async void Section11()
         {
+            theCleaner();
+            Instructions.Content = "cake is done!";
+
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
-            await Task.Delay(2500);
+            await Task.Delay(1500);
+
+            section++;
+            step = 0;
+            repeater = 0;
+
+            switch (section)
+            {
+                default: Section1(); break;
+
+                case 1: Section1(); break;
+                case 2: Section2(); break;
+                case 3: Section3(); break;
+                case 4: Section4(); break;
+                case 5: Section5(); break;
+                case 6: Section6(); break;
+                case 7: Section7(); break;
+                case 8: Section8(); break;
+                case 9: Section9(); break;
+                case 10: Section10(); break;
+                case 11: Section11(); break;
+                case 12: Section12(); break;
+                case 13: Section13(); break;
+
+                case 14: ending(); break;
+            }
         }
 
         public void Section12()
@@ -429,26 +471,37 @@ namespace ALegjobbSutosJatekProjekt
 
                 ingredientSlots[i + picoffset].Tag = hozzávalók[i].TagName;
             }
-            Instructions.Content = hozzávalók[step].instructionsText;
-            if (hozzávalók[step].Repeats > 1)
-            {
-                Instructions.Content += hozzávalók[step].Repeats.ToString();
-            }
+
+            instructionupdater();
         }
         public async void usualtargetupdater()
         {
             if (step >= hozzávalók.Count) {  return; }
             if (hozzávalók[step].Repeats > 1)
             {
+                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_transiton.png", UriKind.Relative));
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
 
             }
             else
             {
+                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_transition.png", UriKind.Relative));
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
 
             }
         }
 
+        public void instructionupdater()
+        {
+            if (hozzávalók[step].Repeats > 1)
+            {
+                Instructions.Content = $"{hozzávalók[step].instructionsText}{hozzávalók[step].Repeats - repeater}";
+
+            }
+            else
+            {
+                Instructions.Content = hozzávalók[step].instructionsText;
+            }
+        }
     }
 }

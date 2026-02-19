@@ -190,5 +190,11 @@
     <Resource Include="ingredientassets\sugar.png" />
     <Resource Include="ingredientassets\woodenspoon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ingredientassets\butter_single.png" />
+    <Resource Include="ingredientassets\chocolate_single.png" />
+    <Resource Include="ingredientassets\creambowl_single.png" />
+    <Resource Include="ingredientassets\egg_single.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
