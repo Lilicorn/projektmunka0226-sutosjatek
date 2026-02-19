@@ -385,8 +385,11 @@ namespace ALegjobbSutosJatekProjekt
             theCleaner();
             Instructions.Content = "oven is done!";
 
-            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_0.png", UriKind.Relative));
             await Task.Delay(1500);
+                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_1.png", UriKind.Relative));
+            await Task.Delay(1500);
+            //nwemtom kell-e meg kep esetleg? 
 
             section++;
             step = 0;
