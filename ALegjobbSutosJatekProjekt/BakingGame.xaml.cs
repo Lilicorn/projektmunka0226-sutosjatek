@@ -114,7 +114,7 @@ namespace ALegjobbSutosJatekProjekt
             Canvas.SetTop(huzigalt, position.Y - offset.Y);
         }
 
-        private  void MouseUp(object sender, MouseButtonEventArgs e)
+        private async void MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (huzigalt == null) return;
 
@@ -142,7 +142,7 @@ namespace ALegjobbSutosJatekProjekt
                 if (leccimukodj.Repeats > 1)
                 {
                     repeater++;
-                    UNusualtargetupdater();
+                    await UNusualtargetupdater();
 
                     if (repeater >= leccimukodj.Repeats)
                     {
@@ -154,7 +154,7 @@ namespace ALegjobbSutosJatekProjekt
                         {
                             instructionupdater();
 
-                            usualtargetupdater();
+                            await usualtargetupdater();
                         }
 
                     }
@@ -173,7 +173,7 @@ namespace ALegjobbSutosJatekProjekt
 
                     if(step!= hozzávalók.Count)
                     {
-                        usualtargetupdater();
+                        await usualtargetupdater();
                         instructionupdater();
 
                     }
@@ -192,8 +192,7 @@ namespace ALegjobbSutosJatekProjekt
                 section++;
                 step = 0;
                 repeater = 0;
-                usualtargetupdater();
-                Pause();
+                await usualtargetupdater();
                 switch (section)
                 {
                     default: Section1(); break;
@@ -254,7 +253,7 @@ namespace ALegjobbSutosJatekProjekt
         }
 
 
-        public void Section2()
+        public async void Section2()
         {
             picoffset = 0;
 
@@ -266,11 +265,11 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 3, "mix wet ingredients"));
 
             theFiller();
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
 
-        public void Section3()
+        public async void Section3()
         {
             picoffset = 1;
 
@@ -281,10 +280,10 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 2, "mix"));
 
             theFiller();
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
-        public void Section4()
+        public async void Section4()
         {
             picoffset = 1;
 
@@ -294,10 +293,10 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 1, "mix again"));
 
             theFiller();
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
-        public void Section5()
+        public async void Section5()
         {
             picoffset = 2;
 
@@ -306,10 +305,10 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("batter", "/ingredientassets/batter.png", 0, "pour batter into tray"));
 
             theFiller();
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
-        public void Section6()
+        public async void Section6()
         {
             picoffset = 2;
 
@@ -319,10 +318,11 @@ namespace ALegjobbSutosJatekProjekt
 
             theFiller();
 
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
-        public void Section7()
+        //itt tuzhelyre valt; maybe ide kell valami tobb
+        public async void Section7()
         {
             picoffset = 2;
 
@@ -332,10 +332,11 @@ namespace ALegjobbSutosJatekProjekt
 
             theFiller();
 
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
-        public void Section8()
+        //ugyanez mert le kene venni a  tuzhelyrol
+        public async void Section8()
         {
             picoffset = 2;
 
@@ -345,10 +346,11 @@ namespace ALegjobbSutosJatekProjekt
 
             theFiller();
 
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
-        public void Section9()
+        //innnentol ok
+        public async void Section9()
         {
             picoffset = 1;
 
@@ -361,9 +363,10 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("butter", "/ingredientassets/butter_", 2, 2, "add butter x"));
 
             theFiller();
+            await usualtargetupdater();
         }
 
-        public void Section10()
+        public async void Section10()
         {
             picoffset = 1;
 
@@ -373,14 +376,14 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("wooden spoon", "/ingredientassets/woodenspoon.png", 1, "stir gently"));
 
             theFiller();
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
         //section ami csak valt 2-3 kepet a kesz tortarol
         public async void Section11()
         {
             theCleaner();
-            Instructions.Content = "cake is done!";
+            Instructions.Content = "oven is done!";
 
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
             await Task.Delay(1500);
@@ -411,7 +414,7 @@ namespace ALegjobbSutosJatekProjekt
             }
         }
 
-        public void Section12()
+        public async void Section12()
         {
             picoffset = 2;
 
@@ -420,10 +423,10 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("knife", "/ingredientassets/knife.png", 0, "slice cake"));
 
             theFiller();
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
-        public void Section13()
+        public async void Section13()
         {
             picoffset = 1;
 
@@ -433,7 +436,7 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("layer", "/ingredientassets/cakelayer.png", 1, "stack cake layers"));
 
             theFiller();
-            usualtargetupdater();
+            await usualtargetupdater();
         }
 
         
@@ -476,7 +479,7 @@ namespace ALegjobbSutosJatekProjekt
 
             instructionupdater();
         }
-        public async void usualtargetupdater()
+        public async Task usualtargetupdater()
         {
             if (step >= hozzávalók.Count) {  return; }
             transitionphase = true;
@@ -485,7 +488,7 @@ namespace ALegjobbSutosJatekProjekt
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_transiton.png", UriKind.Relative));
                 await Task.Delay(1500);
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
-                await Task.Delay(500);
+                
 
             }
             else
@@ -493,23 +496,23 @@ namespace ALegjobbSutosJatekProjekt
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_transition.png", UriKind.Relative));
                 await Task.Delay(1500);
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
-                await Task.Delay(500);
+               
 
             }
             transitionphase = false;
         }
 
-        public async void UNusualtargetupdater()
+        public async Task UNusualtargetupdater()
         {
             transitionphase = true;
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_transition.png", UriKind.Relative));
             await Task.Delay(500);
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
-            await Task.Delay(500);
+          
             transitionphase = false;
         }
 
-        public async void Pause()
+        public async Task Pause()
         {
             transitionphase = true;
             await Task.Delay(800);

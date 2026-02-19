@@ -196,5 +196,8 @@
     <Resource Include="ingredientassets\creambowl_single.png" />
     <Resource Include="ingredientassets\egg_single.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\1_4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
