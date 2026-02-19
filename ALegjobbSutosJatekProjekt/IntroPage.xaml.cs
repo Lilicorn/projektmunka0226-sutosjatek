@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
+using System.Windows.Threading;
+using System.Threading;
 
 namespace ALegjobbSutosJatekProjekt
 {
@@ -24,6 +27,26 @@ namespace ALegjobbSutosJatekProjekt
         public IntroPage()
         {
             InitializeComponent();
+
+            DispatcherTimer tájmör = new DispatcherTimer();
+            tájmör.Interval = TimeSpan.FromSeconds(0.75);
+            bool stage = false;
+
+            tájmör.Tick += (s, e) =>
+            {
+                if (!stage)
+                {
+                    introspriteanim.ScaleY = 1.03;
+                }
+                else
+                {
+                    introspriteanim.ScaleY = 1.01;
+
+                }
+                stage = !stage;
+            };
+            tájmör.Start();
+
         }
 
         private void Play_Click(object sender, RoutedEventArgs e) { 
@@ -35,5 +58,7 @@ namespace ALegjobbSutosJatekProjekt
         {
             Process.Start("https://sutos.jatek-online.hu/");
         }
+
+        
     }
 }
