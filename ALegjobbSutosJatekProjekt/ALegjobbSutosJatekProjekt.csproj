@@ -153,7 +153,42 @@
     <Resource Include="otherassets\decorphasebtnthing.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ingredientassets\" />
+    <Resource Include="ingredientassets\vanilla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ingredientassets\bakingpowder.png" />
+    <Resource Include="ingredientassets\batter.png" />
+    <Resource Include="ingredientassets\butter_0.png" />
+    <Resource Include="ingredientassets\butter_1.png" />
+    <Resource Include="ingredientassets\butter_2.png" />
+    <Resource Include="ingredientassets\cakelayer.png" />
+    <Resource Include="ingredientassets\chocobowl.png" />
+    <Resource Include="ingredientassets\chocolate_0.png" />
+    <Resource Include="ingredientassets\chocolate_1.png" />
+    <Resource Include="ingredientassets\chocolate_2.png" />
+    <Resource Include="ingredientassets\chocolate_3.png" />
+    <Resource Include="ingredientassets\cocoa.png" />
+    <Resource Include="ingredientassets\cream.png" />
+    <Resource Include="ingredientassets\creambowl.png" />
+    <Resource Include="ingredientassets\creambowl_0.png" />
+    <Resource Include="ingredientassets\creambowl_1.png" />
+    <Resource Include="ingredientassets\creambowl_2.png" />
+    <Resource Include="ingredientassets\creambowl_3.png" />
+    <Resource Include="ingredientassets\creambowl_4.png" />
+    <Resource Include="ingredientassets\drybowl.png" />
+    <Resource Include="ingredientassets\egg_0.png" />
+    <Resource Include="ingredientassets\egg_1.png" />
+    <Resource Include="ingredientassets\egg_2.png" />
+    <Resource Include="ingredientassets\egg_3.png" />
+    <Resource Include="ingredientassets\flour.png" />
+    <Resource Include="ingredientassets\fulltray.png" />
+    <Resource Include="ingredientassets\grate.png" />
+    <Resource Include="ingredientassets\knife.png" />
+    <Resource Include="ingredientassets\milk.png" />
+    <Resource Include="ingredientassets\mixer.png" />
+    <Resource Include="ingredientassets\salt.png" />
+    <Resource Include="ingredientassets\sugar.png" />
+    <Resource Include="ingredientassets\woodenspoon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

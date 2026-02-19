@@ -176,6 +176,7 @@ namespace ALegjobbSutosJatekProjekt
             {
                 section++;
                 step = 0;
+                repeater = 0;
                 usualtargetupdater();
                 
                 switch (section)
@@ -184,17 +185,17 @@ namespace ALegjobbSutosJatekProjekt
 
                     case 1: Section1(); break;
                     case 2: Section2(); break;
-                    case 3: Section2(); break;
-                    case 4: Section2(); break;
-                    case 5: Section2(); break;
-                    case 6: Section2(); break;
-                    case 7: Section2(); break;
-                    case 8: Section2(); break;
-                    case 9: Section2(); break;
-                    case 10: Section2(); break;
-                    case 11: Section2(); break;
-                    case 12: Section2(); break;
-                    case 13: Section2(); break;
+                    case 3: Section3(); break;
+                    case 4: Section4(); break;
+                    case 5: Section5(); break;
+                    case 6: Section6(); break;
+                    case 7: Section7(); break;
+                    case 8: Section8(); break;
+                    case 9: Section9(); break;
+                    case 10: Section10(); break;
+                    case 11: Section11(); break;
+                    case 12: Section12(); break;
+                    case 13: Section13(); break;
 
                     case 14: ending(); break;
                 }
@@ -225,6 +226,8 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.png", UriKind.Relative));
+
             hozzávalók.Add(new ingredient("flour", "/ingredientassets/flour.png", 0, "add flour"));
             hozzávalók.Add(new ingredient("baking powder", "/ingredientassets/bakingpowder.png", 1, "add baking powder"));
             hozzávalók.Add(new ingredient("cocoa powder", "/ingredientassets/cocoa.png", 2, "add cocoa powder"));
@@ -232,7 +235,6 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 4, "mix dry ingredients"));
 
             theFiller();
-            usualtargetupdater();
         }
 
 
@@ -260,7 +262,7 @@ namespace ALegjobbSutosJatekProjekt
 
             hozzávalók.Add(new ingredient("milk", "/ingredientassets/milk.png", 0, "add milk"));
             hozzávalók.Add(new ingredient("vanilla", "/ingredientassets/vanilla.png", 1, "add vanilla"));
-            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 3, "mix"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 2, "mix"));
 
             theFiller();
             usualtargetupdater();
@@ -359,9 +361,10 @@ namespace ALegjobbSutosJatekProjekt
         }
 
         //section ami csak valt 2-3 kepet a kesz tortarol
-        public void Section11()
+        public async void Section11()
         {
-
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
+            await Task.Delay(2500);
         }
 
         public void Section12()
@@ -378,7 +381,7 @@ namespace ALegjobbSutosJatekProjekt
 
         public void Section13()
         {
-            picoffset = 0;
+            picoffset = 1;
 
             theCleaner();
 
