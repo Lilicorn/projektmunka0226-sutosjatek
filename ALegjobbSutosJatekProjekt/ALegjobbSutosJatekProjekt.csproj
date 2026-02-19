@@ -131,17 +131,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ingredientassets\egg.jpg" />
-    <Resource Include="ingredientassets\eggcarton.jpg" />
-    <Resource Include="ingredientassets\eggcarton_0.png" />
-    <Resource Include="ingredientassets\eggcarton_1.png" />
-    <Resource Include="ingredientassets\eggcarton_2.png" />
-    <Resource Include="ingredientassets\eggcarton_3.png" />
-    <Resource Include="ingredientassets\emoji_shade_brawlentine_special.png" />
-    <Resource Include="ingredientassets\ingplaceholder.JPG" />
-    <Resource Include="ingredientassets\milk.jpg" />
-    <Resource Include="ingredientassets\mxstery.gif" />
-    <Resource Include="ingredientassets\woodenspoon.jpg" />
     <Resource Include="otherassets\background1.png" />
     <Resource Include="otherassets\background2.png" />
     <Resource Include="otherassets\intrologo.png" />
@@ -162,6 +151,9 @@
   <ItemGroup>
     <Resource Include="otherassets\bakingphasebtnthing.png" />
     <Resource Include="otherassets\decorphasebtnthing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ingredientassets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
