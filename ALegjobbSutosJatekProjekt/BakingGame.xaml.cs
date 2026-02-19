@@ -184,8 +184,19 @@ namespace ALegjobbSutosJatekProjekt
 
                     case 1: Section1(); break;
                     case 2: Section2(); break;
+                    case 3: Section2(); break;
+                    case 4: Section2(); break;
+                    case 5: Section2(); break;
+                    case 6: Section2(); break;
+                    case 7: Section2(); break;
+                    case 8: Section2(); break;
+                    case 9: Section2(); break;
+                    case 10: Section2(); break;
+                    case 11: Section2(); break;
+                    case 12: Section2(); break;
+                    case 13: Section2(); break;
 
-                    case 3: ending(); break;
+                    case 14: ending(); break;
                 }
             }
 
@@ -206,22 +217,24 @@ namespace ALegjobbSutosJatekProjekt
         int section = 1;
         int picoffset = 0;
 
-        
+
 
         public void Section1()
         {
-            picoffset = 1;
+            picoffset = 0;
 
             theCleaner();
 
-            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.png", UriKind.Relative));
-           
-            hozzávalók.Add(new ingredient("egg", "/ingredientassets/egg.jpg", 0, "add egg"));
-            hozzávalók.Add(new ingredient("milk", "/ingredientassets/milk.jpg", 1, "add milk"));
-            hozzávalók.Add(new ingredient("???", "/ingredientassets/mxstery.gif", 2, "add construction gif"));
+            hozzávalók.Add(new ingredient("flour", "/ingredientassets/flour.png", 0, "add flour"));
+            hozzávalók.Add(new ingredient("baking powder", "/ingredientassets/bakingpowder.png", 1, "add baking powder"));
+            hozzávalók.Add(new ingredient("cocoa powder", "/ingredientassets/cocoa.png", 2, "add cocoa powder"));
+            hozzávalók.Add(new ingredient("salt", "/ingredientassets/salt.png", 3, "add salt"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 4, "mix dry ingredients"));
 
             theFiller();
+            usualtargetupdater();
         }
+
 
         public void Section2()
         {
@@ -229,21 +242,154 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("eggs", "/ingredientassets/eggcarton_", 0, 3, "add eggs x"));
-            hozzávalók.Add(new ingredient("milk", "/ingredientassets/woodenspoon.jpg", 1, "stir"));
-            hozzávalók.Add(new ingredient("spoon", "/ingredientassets/woodenspoon.jpg", 2, "stir again"));
-            hozzávalók.Add(new ingredient("balls", "/ingredientassets/woodenspoon.jpg", 3, "i said stir b"));
-            hozzávalók.Add(new ingredient("???", "/ingredientassets/mxstery.gif", 4, "construciton gif dubstep !!!!!"));
-            
+            hozzávalók.Add(new ingredient("butter", "/ingredientassets/butter.png", 0, 2, "add butter x2"));
+            hozzávalók.Add(new ingredient("sugar", "/ingredientassets/sugar.png", 1, "add sugar"));
+            hozzávalók.Add(new ingredient("egg", "/ingredientassets/egg.png", 2, 3, "add eggs x3"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 3, "mix wet ingredients"));
+
+            theFiller();
+            usualtargetupdater();
+        }
+
+
+        public void Section3()
+        {
+            picoffset = 1;
+
+            theCleaner();
+
+            hozzávalók.Add(new ingredient("milk", "/ingredientassets/milk.png", 0, "add milk"));
+            hozzávalók.Add(new ingredient("vanilla", "/ingredientassets/vanilla.png", 1, 2, "add vanilla x2"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 3, "mix"));
+
+            theFiller();
+            usualtargetupdater();
+        }
+
+        public void Section4()
+        {
+            picoffset = 1;
+
+            theCleaner();
+
+            hozzávalók.Add(new ingredient("drybowl", "/ingredientassets/drybowl.png", 0, "combine mixtures"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 1, "mix again"));
+
+            theFiller();
+            usualtargetupdater();
+        }
+
+        public void Section5()
+        {
+            picoffset = 2;
+
+            theCleaner();
+
+            hozzávalók.Add(new ingredient("batter", "/ingredientassets/batter.png", 0, "pour batter into tray"));
+
+            theFiller();
+            usualtargetupdater();
+        }
+
+        public void Section6()
+        {
+            picoffset = 2;
+
+            theCleaner();
+
+            hozzávalók.Add(new ingredient("batter in tray", "/ingredientassets/fulltray.png", 0, "put into oven"));
+
             theFiller();
 
             usualtargetupdater();
+        }
+
+        public void Section7()
+        {
+            picoffset = 2;
+
+            theCleaner();
+
+            hozzávalók.Add(new ingredient("cream", "/ingredientassets/cream.png", 0, "add whipping cream"));
+
+            theFiller();
+
+            usualtargetupdater();
+        }
+
+        public void Section8()
+        {
+            picoffset = 2;
+
+            theCleaner();
+
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 0, "whip to foam"));
+
+            theFiller();
+
+            usualtargetupdater();
+        }
+
+        public void Section9()
+        {
+            picoffset = 1;
+
+            theCleaner();
+
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
+
+            hozzávalók.Add(new ingredient("grate", "/ingredientassets/grate.png", 0, "put grate into bowl"));
+            hozzávalók.Add(new ingredient("chocolate", "/ingredientassets/chocolate.png", 1, 3, "grate chocolate x3"));
+            hozzávalók.Add(new ingredient("butter", "/ingredientassets/butter.png", 2, 2, "add butter x2"));
+
+            theFiller();
+        }
+
+        public void Section10()
+        {
+            picoffset = 1;
+
+            theCleaner();
+
+            hozzávalók.Add(new ingredient("choco bowl", "/ingredientassets/chocobowl.png", 0, "combine bowls"));
+            hozzávalók.Add(new ingredient("wooden spoon", "/ingredientassets/woodenspoon.png", 1, "stir gently"));
+
+            theFiller();
+            usualtargetupdater();
+        }
+
+        //section ami csak valt 2-3 kepet a kesz tortarol
+        public void Section11()
+        {
 
         }
 
-        //HA VALAMIT UJ SECTIONT HOZZAADSZ AKKOR NEZZ RA A SWITCH(SECITON) RE MERT OTT ELFELEJTED MAJD ATIRNI
+        public void Section12()
+        {
+            picoffset = 2;
 
+            theCleaner();
 
+            hozzávalók.Add(new ingredient("knife", "/ingredientassets/knife.png", 0, "slice cake"));
+
+            theFiller();
+            usualtargetupdater();
+        }
+
+        public void Section13()
+        {
+            picoffset = 0;
+
+            theCleaner();
+
+            hozzávalók.Add(new ingredient("creambowl", "/ingredientassets/spatula.png", 0, 4, "spread cream x4"));
+            hozzávalók.Add(new ingredient("layer", "/ingredientassets/cake.png", 1, "stack cake layers"));
+
+            theFiller();
+            usualtargetupdater();
+        }
+
+        
         public async void ending()
         {
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
@@ -252,7 +398,7 @@ namespace ALegjobbSutosJatekProjekt
 
             await Task.Delay(2000);
 
-            NavigationService.Navigate(new OutroPage());
+            NavigationService.Navigate(new TransitionPage   ());
         }
 
 
@@ -286,7 +432,7 @@ namespace ALegjobbSutosJatekProjekt
                 Instructions.Content += hozzávalók[step].Repeats.ToString();
             }
         }
-        public void usualtargetupdater()
+        public async void usualtargetupdater()
         {
             if (step >= hozzávalók.Count) {  return; }
             if (hozzávalók[step].Repeats > 1)
