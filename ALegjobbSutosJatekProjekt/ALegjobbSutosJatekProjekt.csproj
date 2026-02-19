@@ -141,11 +141,8 @@
     <Resource Include="targetassets\1_3.png" />
     <Resource Include="targetassets\2_0_0.png" />
     <Resource Include="targetassets\2_0_1.png" />
-    <Resource Include="targetassets\2_0_2.png" />
     <Resource Include="targetassets\2_1.png" />
-    <Resource Include="targetassets\2_2.png" />
     <Resource Include="targetassets\2_3.png" />
-    <Resource Include="targetassets\2_4.png" />
     <Resource Include="targetassets\end.png" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +195,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="targetassets\1_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_2_0.png" />
+    <Resource Include="targetassets\2_2_1.png" />
+    <Resource Include="targetassets\2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\10_0.png" />
+    <Resource Include="targetassets\10_1.png" />
+    <Resource Include="targetassets\12_0.png" />
+    <Resource Include="targetassets\13_0_0.png" />
+    <Resource Include="targetassets\13_0_1.png" />
+    <Resource Include="targetassets\13_0_2.png" />
+    <Resource Include="targetassets\13_0_3.png" />
+    <Resource Include="targetassets\13_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\3_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\3_2.png" />
+    <Resource Include="targetassets\4_0.png" />
+    <Resource Include="targetassets\4_1.png" />
+    <Resource Include="targetassets\5_0.png" />
+    <Resource Include="targetassets\6_0.png" />
+    <Resource Include="targetassets\7_0.png" />
+    <Resource Include="targetassets\8_0.png" />
+    <Resource Include="targetassets\9_0.png" />
+    <Resource Include="targetassets\9_1_0.png" />
+    <Resource Include="targetassets\9_1_1.png" />
+    <Resource Include="targetassets\9_1_2.png" />
+    <Resource Include="targetassets\9_2_0.png" />
+    <Resource Include="targetassets\9_2_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

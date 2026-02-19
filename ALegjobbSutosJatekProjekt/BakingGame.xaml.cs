@@ -142,7 +142,6 @@ namespace ALegjobbSutosJatekProjekt
                 if (leccimukodj.Repeats > 1)
                 {
                     repeater++;
-                    await UNusualtargetupdater();
 
                     if (repeater >= leccimukodj.Repeats)
                     {
@@ -160,6 +159,7 @@ namespace ALegjobbSutosJatekProjekt
                     }
                     else
                     {
+                        await UNusualtargetupdater();
                         ingredientSlots[leccimukodj.StepIndex + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
                         eredetihely.Opacity = 1;
                         instructionupdater();
