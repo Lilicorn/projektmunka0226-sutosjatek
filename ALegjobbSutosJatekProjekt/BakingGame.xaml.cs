@@ -104,9 +104,9 @@ namespace ALegjobbSutosJatekProjekt
 
         }
 
-        private void MouseMove(object sender, MouseEventArgs e)
+        private async void MouseMove(object sender, MouseEventArgs e)
         {
-            if (huzigalt == null) return;
+            if (huzigalt == null || transitionphase ) return;
 
             Point position = e.GetPosition(background);
 
@@ -114,7 +114,7 @@ namespace ALegjobbSutosJatekProjekt
             Canvas.SetTop(huzigalt, position.Y - offset.Y);
         }
 
-        private void MouseUp(object sender, MouseButtonEventArgs e)
+        private  void MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (huzigalt == null) return;
 
@@ -142,6 +142,7 @@ namespace ALegjobbSutosJatekProjekt
                 if (leccimukodj.Repeats > 1)
                 {
                     repeater++;
+                    UNusualtargetupdater();
 
                     if (repeater >= leccimukodj.Repeats)
                     {
@@ -192,7 +193,7 @@ namespace ALegjobbSutosJatekProjekt
                 step = 0;
                 repeater = 0;
                 usualtargetupdater();
-                
+                Pause();
                 switch (section)
                 {
                     default: Section1(); break;
@@ -231,6 +232,7 @@ namespace ALegjobbSutosJatekProjekt
         int repeater = 0;
         int section = 1;
         int picoffset = 0;
+        bool transitionphase = false;
 
 
 
@@ -477,19 +479,43 @@ namespace ALegjobbSutosJatekProjekt
         public async void usualtargetupdater()
         {
             if (step >= hozzávalók.Count) {  return; }
+            transitionphase = true;
             if (hozzávalók[step].Repeats > 1)
             {
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_transiton.png", UriKind.Relative));
+                await Task.Delay(1500);
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
+                await Task.Delay(500);
 
             }
             else
             {
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_transition.png", UriKind.Relative));
+                await Task.Delay(1500);
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
+                await Task.Delay(500);
 
             }
+            transitionphase = false;
         }
+
+        public async void UNusualtargetupdater()
+        {
+            transitionphase = true;
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_transition.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
+            await Task.Delay(500);
+            transitionphase = false;
+        }
+
+        public async void Pause()
+        {
+            transitionphase = true;
+            await Task.Delay(800);
+            transitionphase = false;
+        }
+
 
         public void instructionupdater()
         {
