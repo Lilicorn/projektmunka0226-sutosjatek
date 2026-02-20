@@ -232,5 +232,17 @@
     <Resource Include="targetassets\9_2_0.png" />
     <Resource Include="targetassets\9_2_1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="otherassets\playbutton.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="playbutton.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="otherassets\morebutton.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="morebutton.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
