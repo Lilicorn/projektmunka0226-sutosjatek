@@ -244,5 +244,14 @@
   <ItemGroup>
     <Resource Include="morebutton.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\11_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\11_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="otherassets\background2.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

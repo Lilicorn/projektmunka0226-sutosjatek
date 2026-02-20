@@ -60,11 +60,11 @@
 
             </Grid>
 
-            <Image  Panel.ZIndex="-1" Source="/otherassets/background2.png" Stretch="Fill"  />
+            <Image  Panel.ZIndex="-1" Source="/otherassets/background2.jpg" Stretch="Fill"  />
 
         </Grid>
 
-        <Image Source="/otherassets/background1.png" Stretch="UniformToFill"></Image>
+        <Image Panel.ZIndex="-2" Source="/otherassets/background1.png" Stretch="UniformToFill" Margin="0,0,0,0" Grid.RowSpan="2"></Image> <!--OHHHHHHH ja hoyg itt is van rowspan 😭😭😭😭😭😭😭😭😭😭😭😭😭😭-->
         <Canvas Panel.ZIndex="0" x:Name="background" Background="Transparent"/>
 
 

@@ -6,27 +6,36 @@
       xmlns:local="clr-namespace:ALegjobbSutosJatekProjekt"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="TransitionPage" Loaded="help">
+      Title="TransitionPage" Loaded="help" SizeChanged="Page_SizeChanged">
 
-    <Grid Margin="100pt 50pt">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" x:Name="baking" Margin="15pt" Style="{StaticResource GameButtonStyle}">
-            <Button.Background>
-                <ImageBrush ImageSource="/otherassets/bakingphasebtnthing.png"/>
-            </Button.Background>
-            
+    <Grid>
+        <Grid Margin="100pt 50pt">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="baking" Margin="15pt" Style="{StaticResource GameButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/otherassets/bakingphasebtnthing.png" Stretch="Uniform"/>
+                </Button.Background>
 
-        </Button>
 
-        <Button Grid.Column="1" x:Name="decor" Margin="15pt" Style="{StaticResource GameButtonStyle}">
-            <Button.Background>
-                <ImageBrush ImageSource="/otherassets/decorphasebtnthing.png"/>
-            </Button.Background>
-        </Button>
+            </Button>
 
+            <Button Grid.Column="1" x:Name="decor" Margin="15pt" Style="{StaticResource GameButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/otherassets/decorphasebtnthing.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+
+
+
+        </Grid>
+
+        <Image x:Name="table" Margin="0 115pt 0 0" Panel.ZIndex="-1" Source="/otherassets/background2.jpg" Stretch="Fill"  />
+
+        <Image Panel.ZIndex="-2" Source="/otherassets/background1.png" Stretch="UniformToFill"></Image>
 
     </Grid>
+
 </Page>
