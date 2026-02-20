@@ -253,5 +253,43 @@
   <ItemGroup>
     <Resource Include="otherassets\background2.JPG" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="decorassets\basecake.PNG" />
+    <Resource Include="decorassets\bottomside\bottomside_1.PNG" />
+    <Resource Include="decorassets\coveringcolor\coveringcolor_1.PNG" />
+    <Resource Include="decorassets\midside\midside_1.PNG" />
+    <Resource Include="decorassets\stand\stand_1.PNG" />
+    <Resource Include="decorassets\topfrosting\topfrosting_1.PNG" />
+    <Resource Include="decorassets\topside\topside_11.PNG" />
+    <Resource Include="decorassets\topside\topside_12.PNG" />
+    <Resource Include="decorassets\top\top_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="basecake.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="stand_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="coveringcolor_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="topfrosting_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bottomside_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="midside_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="topside_11.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="topside_12.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="top_1.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

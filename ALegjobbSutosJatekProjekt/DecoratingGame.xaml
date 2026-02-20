@@ -6,9 +6,53 @@
       xmlns:local="clr-namespace:ALegjobbSutosJatekProjekt"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="DecoratingGame">
+      Title="DecoratingGame" SizeChanged="Page_SizeChanged">
 
     <Grid>
-        
+        <Grid Margin="15pt">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <Button x:Name="top_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="1" Foreground="White"></Button>
+                <Button x:Name="topside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="2" Foreground="White"></Button>
+                <Button x:Name="midside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="3" Foreground="White"></Button>
+                <Button x:Name="bottomside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="4" Foreground="White"></Button>
+                <Button x:Name="topfrosting_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="5" Foreground="White"></Button>
+                <Button x:Name="coveringcolor_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="6" Foreground="White"></Button>
+                <Button x:Name="stand_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="7" Foreground="White"></Button>
+            </StackPanel>
+
+            <ListBox x:Name="decorListing"  Margin="0 15pt 15pt 15pt" Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="2"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+            </ListBox>
+
+            <!--ezeket at kene nevezni az alapjan hoyg pontosan micsodák; watch out-->
+            <Image x:Name="topside_frame1" Grid.Column="2" Panel.ZIndex="7" Margin="15pt" Source="/decorassets/topside/topside_11.PNG" Stretch="Uniform"/>
+            <Image x:Name="top_frame" Grid.Column="2" Panel.ZIndex="6" Margin="15pt" Source="/decorassets/top/top_1.PNG" Stretch="Uniform"/>
+            <Image x:Name="topside_frame2" Grid.Column="2" Panel.ZIndex="5" Margin="15pt" Source="/decorassets/topside/topside_12.PNG" Stretch="Uniform"/>
+            <Image x:Name="midside_frame" Grid.Column="2" Panel.ZIndex="4" Margin="15pt" Source="/decorassets/midside/midside_1.PNG" Stretch="Uniform"/>
+            <Image x:Name="bottomside_frame" Grid.Column="2" Panel.ZIndex="3" Margin="15pt" Source="/decorassets/bottomside/bottomside_1.PNG" Stretch="Uniform"/>
+            <Image x:Name="topfrosting_frame" Grid.Column="2" Panel.ZIndex="2" Margin="15pt" Source="decorassets/topfrosting/topfrosting_1.PNG" Stretch="Uniform"/>
+            <Image x:Name="coveringcolor_frame" Grid.Column="2" Panel.ZIndex="2" Margin="15pt" Source="/decorassets/coveringcolor/coveringcolor_1.PNG" Stretch="Uniform"/>
+
+            <Image x:Name="basecake" Grid.Column="2" Panel.ZIndex="1" Margin="15pt" Source="/basecake.PNG" Stretch="Uniform"/>
+
+            <Image x:Name="stand_frame" Grid.Column="2" Panel.ZIndex="0" Margin="15pt" Source="/decorassets/stand/stand_1.PNG" Stretch="Uniform"/>
+
+        </Grid>
+
+        <Image x:Name="table" Margin="0 115pt 0 0" Panel.ZIndex="-1" Source="/otherassets/background2.jpg" Stretch="Fill"  />
+
+        <Image Panel.ZIndex="-2" Source="/otherassets/background1.png" Stretch="UniformToFill"></Image>
     </Grid>
 </Page>
