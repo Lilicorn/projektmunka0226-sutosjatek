@@ -280,7 +280,7 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("salt", "/ingredientassets/salt", 3, "add salt"));
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 4, "mix dry ingredients"));
 
-            marginfixer();
+            theMarginFixer();
             theFiller();
         }
 
@@ -307,7 +307,7 @@ namespace ALegjobbSutosJatekProjekt
             await Task.Delay(500);
             transitionphase = false;
 
-            marginfixer();
+            theMarginFixer();
             theFiller();
 
         }
@@ -325,7 +325,7 @@ namespace ALegjobbSutosJatekProjekt
 
             await usualtargetupdater();
 
-            marginfixer();
+            theMarginFixer();
             theFiller();
 
         }
@@ -347,7 +347,7 @@ namespace ALegjobbSutosJatekProjekt
             await Task.Delay(500);
             transitionphase = false;
 
-            marginfixer(); 
+            theMarginFixer(); 
             theFiller();
 
         }
@@ -372,7 +372,7 @@ namespace ALegjobbSutosJatekProjekt
             await Task.Delay(500);
             transitionphase = false;
 
-            marginfixer(); 
+            theMarginFixer(); 
             theFiller();
 
 
@@ -400,12 +400,11 @@ namespace ALegjobbSutosJatekProjekt
             await Task.Delay(500);
             transitionphase = false;
 
-            marginfixer();
+            theMarginFixer();
             theFiller();
 
         }
 
-        //itt tuzhelyre valt; maybe ide kell valami tobb
         public async void Section7()
         {
             picoffset = 2;
@@ -426,12 +425,11 @@ namespace ALegjobbSutosJatekProjekt
             await Task.Delay(500);
             transitionphase = false;
 
-            marginfixer();
+            theMarginFixer();
             theFiller();
 
         }
 
-        //ugyanez mert le kene venni a  tuzhelyrol
         public async void Section8()
         {
             picoffset = 2;
@@ -442,7 +440,26 @@ namespace ALegjobbSutosJatekProjekt
 
             await usualtargetupdater();
 
-            marginfixer();
+            transitionphase = true;
+            for (int j = 1; j <= 2; j++)
+            {
+                for (int i = 1; i <= 4; i++)
+                {
+                    Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/uselessloop_{i}.png", UriKind.Relative));
+                    await Task.Delay(250);
+                }
+                await Task.Delay(250);
+            }
+            await Task.Delay(250);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/8_fix_1.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/8_fix_2.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/8_fix_3.png", UriKind.Relative));
+            await Task.Delay(500);
+            transitionphase = false;
+
+            theMarginFixer();
             theFiller();
 
         }
@@ -462,7 +479,19 @@ namespace ALegjobbSutosJatekProjekt
 
             await usualtargetupdater();
 
-            marginfixer();
+            transitionphase = true;
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/9_fix_1.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/9_fix_2.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/9_fix_3.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/9_fix_4.png", UriKind.Relative));
+            await Task.Delay(500);
+            transitionphase = false;
+
+            theMarginFixer();
             theFiller();
 
         }
@@ -478,7 +507,7 @@ namespace ALegjobbSutosJatekProjekt
 
             await usualtargetupdater();
 
-            marginfixer();
+            theMarginFixer();
             theFiller();
 
         }
@@ -488,7 +517,7 @@ namespace ALegjobbSutosJatekProjekt
         {
             theCleaner();
             Instructions.Content = "oven is done!";
-
+            theMarginFixer();
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_0.png", UriKind.Relative));
             await Task.Delay(1500);
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_1.png", UriKind.Relative));
@@ -499,26 +528,7 @@ namespace ALegjobbSutosJatekProjekt
             step = 0;
             repeater = 0;
 
-            switch (section)
-            {
-                default: Section1(); break;
-
-                case 1: Section1(); break;
-                case 2: Section2(); break;
-                case 3: Section3(); break;
-                case 4: Section4(); break;
-                case 5: Section5(); break;
-                case 6: Section6(); break;
-                case 7: Section7(); break;
-                case 8: Section8(); break;
-                case 9: Section9(); break;
-                case 10: Section10(); break;
-                case 11: Section11(); break;
-                case 12: Section12(); break;
-                case 13: Section13(); break;
-
-                case 14: ending(); break;
-            }
+            Section12();
         }
 
         public async void Section12()
@@ -531,7 +541,7 @@ namespace ALegjobbSutosJatekProjekt
 
             await usualtargetupdater();
 
-            marginfixer();
+            theMarginFixer();
             theFiller();
 
 
@@ -548,7 +558,7 @@ namespace ALegjobbSutosJatekProjekt
 
             await usualtargetupdater();
 
-            marginfixer();
+            theMarginFixer();
             theFiller();
 
         }
@@ -627,13 +637,6 @@ namespace ALegjobbSutosJatekProjekt
             transitionphase = false;
         }
 
-        public async Task Pause()
-        {
-            transitionphase = true;
-            await Task.Delay(800);
-            transitionphase = false;
-        }
-
 
         public void instructionupdater()
         {
@@ -648,13 +651,17 @@ namespace ALegjobbSutosJatekProjekt
             }
         }
 
-        public void marginfixer()
+        public void theMarginFixer()
         {
             var cucc = new ThicknessConverter();
 
             if (picoffset == 2)
             {
                 ingredientsection.Margin = (Thickness)cucc.ConvertFromString("-40pt 40pt -40pt -80pt");
+            }
+            else if (section==11)
+            { 
+                Usualtarget.Margin = (Thickness)cucc.ConvertFromString("-150pt -50pt 150pt 50pt");
             }
             else
             {

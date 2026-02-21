@@ -365,5 +365,23 @@
   <ItemGroup>
     <Resource Include="targetassets\7_0_t.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\8_0.PNG" />
+    <Resource Include="targetassets\8_0_t.PNG" />
+    <Resource Include="targetassets\8_fix_1.PNG" />
+    <Resource Include="targetassets\8_fix_2.PNG" />
+    <Resource Include="targetassets\8_fix_3.PNG" />
+    <Resource Include="targetassets\9_0_t.PNG" />
+    <Resource Include="targetassets\9_fix_1.PNG" />
+    <Resource Include="targetassets\9_fix_2.PNG" />
+    <Resource Include="targetassets\uselessloop_1.PNG" />
+    <Resource Include="targetassets\uselessloop_2.PNG" />
+    <Resource Include="targetassets\uselessloop_3.PNG" />
+    <Resource Include="targetassets\uselessloop_4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\9_fix_3.PNG" />
+    <Resource Include="targetassets\9_fix_4.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
