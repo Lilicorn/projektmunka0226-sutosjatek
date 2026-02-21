@@ -280,6 +280,7 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("salt", "/ingredientassets/salt", 3, "add salt"));
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 4, "mix dry ingredients"));
 
+            marginfixer();
             theFiller();
         }
 
@@ -295,11 +296,19 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("egg", "/ingredientassets/egg_", 2, 3, "add eggs x"));
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 3, "mix wet ingredients"));
 
-            theFiller();
             await usualtargetupdater();
 
+            transitionphase = true;
+            Instructions.Content = "switching bowl...";
+            await Task.Delay(1000);
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/2_fix_1.png", UriKind.Relative));
+            await Task.Delay(500);
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/2_fix_2.png", UriKind.Relative));
+            await Task.Delay(500);
+            transitionphase = false;
+
+            marginfixer();
+            theFiller();
 
         }
 
@@ -314,8 +323,11 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("vanilla", "/ingredientassets/vanilla", 1, "add vanilla"));
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 2, "mix"));
 
-            theFiller();
             await usualtargetupdater();
+
+            marginfixer();
+            theFiller();
+
         }
 
         public async void Section4()
@@ -327,8 +339,17 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("drybowl", "/ingredientassets/drybowl", 0, "combine mixtures"));
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 1, "mix again"));
 
-            theFiller();
             await usualtargetupdater();
+
+            transitionphase = true;
+            await Task.Delay(1000);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/4_fix.png", UriKind.Relative));
+            await Task.Delay(500);
+            transitionphase = false;
+
+            marginfixer(); 
+            theFiller();
+
         }
 
         public async void Section5()
@@ -339,8 +360,22 @@ namespace ALegjobbSutosJatekProjekt
 
             hozzávalók.Add(new ingredient("batter", "/ingredientassets/batter", 0, "pour batter into tray"));
 
-            theFiller();
             await usualtargetupdater();
+            transitionphase = true;
+            Instructions.Content = "preparing tray...";
+            await Task.Delay(1000);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/5_fix_1.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/5_fix_2.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/5_fix_3.png", UriKind.Relative));
+            await Task.Delay(500);
+            transitionphase = false;
+
+            marginfixer(); 
+            theFiller();
+
+
         }
 
         public async void Section6()
@@ -349,11 +384,25 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("batter in tray", "/ingredientassets/fulltray", 0, "put into oven"));
+            hozzávalók.Add(new ingredient("batter in tray", "/ingredientassets/fulltray", 0, "put tray into oven"));
 
-            theFiller();
 
             await usualtargetupdater();
+
+            transitionphase = true;
+            await Task.Delay(1000);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/6_fix_1.png", UriKind.Relative));
+            Instructions.Content = "preparing oven...";
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/6_fix_2.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/6_fix_3.png", UriKind.Relative));
+            await Task.Delay(500);
+            transitionphase = false;
+
+            marginfixer();
+            theFiller();
+
         }
 
         //itt tuzhelyre valt; maybe ide kell valami tobb
@@ -365,9 +414,21 @@ namespace ALegjobbSutosJatekProjekt
 
             hozzávalók.Add(new ingredient("cream", "/ingredientassets/cream", 0, "add whipping cream"));
 
+            await usualtargetupdater();
+
+
+            transitionphase = true;
+            Instructions.Content = "while the cake is baking,\n lets make some cream!";
+            await Task.Delay(2000);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/7_fix_1.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/7_fix_2.png", UriKind.Relative));
+            await Task.Delay(500);
+            transitionphase = false;
+
+            marginfixer();
             theFiller();
 
-            await usualtargetupdater();
         }
 
         //ugyanez mert le kene venni a  tuzhelyrol
@@ -379,9 +440,11 @@ namespace ALegjobbSutosJatekProjekt
 
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 0, "whip to foam"));
 
+            await usualtargetupdater();
+
+            marginfixer();
             theFiller();
 
-            await usualtargetupdater();
         }
 
         //innnentol ok
@@ -397,8 +460,11 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("chocolate", "/ingredientassets/chocolate_", 1, 3, "grate chocolate x"));
             hozzávalók.Add(new ingredient("butter", "/ingredientassets/butter_", 2, 2, "add butter x"));
 
-            theFiller();
             await usualtargetupdater();
+
+            marginfixer();
+            theFiller();
+
         }
 
         public async void Section10()
@@ -410,8 +476,11 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("choco bowl", "/ingredientassets/chocobowl", 0, "combine bowls"));
             hozzávalók.Add(new ingredient("wooden spoon", "/ingredientassets/woodenspoon", 1, "stir gently"));
 
-            theFiller();
             await usualtargetupdater();
+
+            marginfixer();
+            theFiller();
+
         }
 
         //section ami csak valt 2-3 kepet a kesz tortarol
@@ -460,8 +529,12 @@ namespace ALegjobbSutosJatekProjekt
 
             hozzávalók.Add(new ingredient("knife", "/ingredientassets/knife", 0, "slice cake"));
 
-            theFiller();
             await usualtargetupdater();
+
+            marginfixer();
+            theFiller();
+
+
         }
 
         public async void Section13()
@@ -473,11 +546,14 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("creambowl", "/ingredientassets/creambowl_", 0, 4, "spread cream x"));
             hozzávalók.Add(new ingredient("layer", "/ingredientassets/cakelayer", 1, "stack cake layers"));
 
-            theFiller();
             await usualtargetupdater();
+
+            marginfixer();
+            theFiller();
+
         }
 
-        
+
         public async void ending()
         {
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
@@ -523,22 +599,18 @@ namespace ALegjobbSutosJatekProjekt
             transitionphase = true;
             if (hozzávalók[step].Repeats > 1)
             {
-                MessageBox.Show($"/targetassets/{section}_{step}_{repeater}_t.png");
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_t.png", UriKind.Relative));
-                await Task.Delay(1450);
-                MessageBox.Show($"/targetassets/{section}_{step}_{repeater}.png");
+                await Task.Delay(1500);
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
-                await Task.Delay(50);
+                
 
             }
             else
             {
-                MessageBox.Show($"/targetassets/{section}_{step}_t.png");
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_t.png", UriKind.Relative));
-                await Task.Delay(1450);
-                MessageBox.Show($"/targetassets/{section}_{step}.png");
+                await Task.Delay(1500);
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
-                await Task.Delay(50);
+               
 
             }
             transitionphase = false;
@@ -547,12 +619,9 @@ namespace ALegjobbSutosJatekProjekt
         public async Task UNusualtargetupdater()
         {
             transitionphase = true;
-            MessageBox.Show($"/targetassets/{section}_{step}_{repeater}_t.png");
 
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_t.png", UriKind.Relative));
             await Task.Delay(500);
-            MessageBox.Show($"/targetassets/{section}_{step}_{repeater}.png");
-
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
           
             transitionphase = false;
@@ -578,5 +647,22 @@ namespace ALegjobbSutosJatekProjekt
                 Instructions.Content = hozzávalók[step].instructionsText;
             }
         }
+
+        public void marginfixer()
+        {
+            var cucc = new ThicknessConverter();
+
+            if (picoffset == 2)
+            {
+                ingredientsection.Margin = (Thickness)cucc.ConvertFromString("-40pt 40pt -40pt -80pt");
+            }
+            else
+            {
+                ingredientsection.Margin = (Thickness)cucc.ConvertFromString("0 -30pt 0 30pt");
+            }
+
+            
+        }
+
     }
 }

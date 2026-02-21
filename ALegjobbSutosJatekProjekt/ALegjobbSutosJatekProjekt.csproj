@@ -259,7 +259,6 @@
     <Resource Include="targetassets\5_0.png" />
     <Resource Include="targetassets\6_0.png" />
     <Resource Include="targetassets\7_0.png" />
-    <Resource Include="targetassets\8_0.png" />
     <Resource Include="targetassets\9_0.png" />
     <Resource Include="targetassets\9_1_0.png" />
     <Resource Include="targetassets\9_1_1.png" />
@@ -326,6 +325,45 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="targetassets\2_fix_2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\14_0_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\3_1_t.PNG" />
+    <Resource Include="targetassets\3_2_t.PNG" />
+    <Resource Include="targetassets\4_0_t.PNG" />
+    <Resource Include="targetassets\4_fix.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\5_0_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\4_1_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\5_fix_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\5_fix_2.PNG" />
+    <Resource Include="targetassets\5_fix_3.PNG" />
+    <Resource Include="targetassets\6_0_t.PNG" />
+    <Resource Include="targetassets\6_fix_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\7_fix_2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\6_fix_3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\6_fix_2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\7_fix_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\7_0_t.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
