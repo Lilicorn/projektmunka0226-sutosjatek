@@ -135,15 +135,6 @@
     <Resource Include="otherassets\background2.png" />
     <Resource Include="otherassets\intrologo.png" />
     <Resource Include="otherassets\introsprite.png" />
-    <Resource Include="targetassets\1_0.png" />
-    <Resource Include="targetassets\1_1.png" />
-    <Resource Include="targetassets\1_2.png" />
-    <Resource Include="targetassets\1_3.png" />
-    <Resource Include="targetassets\2_0_0.png" />
-    <Resource Include="targetassets\2_0_1.png" />
-    <Resource Include="targetassets\2_1.png" />
-    <Resource Include="targetassets\2_3.png" />
-    <Resource Include="targetassets\end.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="otherassets\bakingphasebtnthing.png" />
@@ -194,45 +185,6 @@
     <Resource Include="ingredientassets\egg_single.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="targetassets\1_4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="targetassets\2_2_0.png" />
-    <Resource Include="targetassets\2_2_1.png" />
-    <Resource Include="targetassets\2_2_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="targetassets\3_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="targetassets\10_0.png" />
-    <Resource Include="targetassets\10_1.png" />
-    <Resource Include="targetassets\12_0.png" />
-    <Resource Include="targetassets\13_0_0.png" />
-    <Resource Include="targetassets\13_0_1.png" />
-    <Resource Include="targetassets\13_0_2.png" />
-    <Resource Include="targetassets\13_0_3.png" />
-    <Resource Include="targetassets\13_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="targetassets\3_0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="targetassets\3_2.png" />
-    <Resource Include="targetassets\4_0.png" />
-    <Resource Include="targetassets\4_1.png" />
-    <Resource Include="targetassets\5_0.png" />
-    <Resource Include="targetassets\6_0.png" />
-    <Resource Include="targetassets\7_0.png" />
-    <Resource Include="targetassets\8_0.png" />
-    <Resource Include="targetassets\9_0.png" />
-    <Resource Include="targetassets\9_1_0.png" />
-    <Resource Include="targetassets\9_1_1.png" />
-    <Resource Include="targetassets\9_1_2.png" />
-    <Resource Include="targetassets\9_2_0.png" />
-    <Resource Include="targetassets\9_2_1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="otherassets\playbutton.PNG" />
   </ItemGroup>
   <ItemGroup>
@@ -243,12 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="morebutton.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="targetassets\11_0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="targetassets\11_1.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="otherassets\background2.JPG" />
@@ -274,6 +220,53 @@
     <Resource Include="coveringcolor_1.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="targetassets\10_0.png" />
+    <Resource Include="targetassets\10_1.png" />
+    <Resource Include="targetassets\11_0.png" />
+    <Resource Include="targetassets\11_1.png" />
+    <Resource Include="targetassets\12_0.png" />
+    <Resource Include="targetassets\13_0_0.png" />
+    <Resource Include="targetassets\13_0_1.png" />
+    <Resource Include="targetassets\13_0_2.png" />
+    <Resource Include="targetassets\13_0_3.png" />
+    <Resource Include="targetassets\13_1.png" />
+    <Resource Include="targetassets\1_0.png" />
+    <Resource Include="targetassets\1_1.png" />
+    <Resource Include="targetassets\1_1_t.PNG" />
+    <Resource Include="targetassets\1_2.png" />
+    <Resource Include="targetassets\1_2_t.PNG" />
+    <Resource Include="targetassets\1_3.png" />
+    <Resource Include="targetassets\1_3_t.PNG" />
+    <Resource Include="targetassets\1_4.png" />
+    <Resource Include="targetassets\1_4_t.PNG" />
+    <Resource Include="targetassets\2_0.PNG" />
+    <Resource Include="targetassets\2_0_0.png" />
+    <Resource Include="targetassets\2_0_0_t.PNG" />
+    <Resource Include="targetassets\2_0_1.png" />
+    <Resource Include="targetassets\2_0_1_t.PNG" />
+    <Resource Include="targetassets\2_0_t.PNG" />
+    <Resource Include="targetassets\2_1.png" />
+    <Resource Include="targetassets\2_1_t.PNG" />
+    <Resource Include="targetassets\2_2_0.png" />
+    <Resource Include="targetassets\2_2_1.png" />
+    <Resource Include="targetassets\2_2_2.png" />
+    <Resource Include="targetassets\2_3.png" />
+    <Resource Include="targetassets\3_0.png" />
+    <Resource Include="targetassets\3_1.png" />
+    <Resource Include="targetassets\3_2.png" />
+    <Resource Include="targetassets\4_0.png" />
+    <Resource Include="targetassets\4_1.png" />
+    <Resource Include="targetassets\5_0.png" />
+    <Resource Include="targetassets\6_0.png" />
+    <Resource Include="targetassets\7_0.png" />
+    <Resource Include="targetassets\8_0.png" />
+    <Resource Include="targetassets\9_0.png" />
+    <Resource Include="targetassets\9_1_0.png" />
+    <Resource Include="targetassets\9_1_1.png" />
+    <Resource Include="targetassets\9_1_2.png" />
+    <Resource Include="targetassets\9_2_0.png" />
+    <Resource Include="targetassets\9_2_1.png" />
+    <Resource Include="targetassets\end.png" />
     <Resource Include="topfrosting_1.PNG" />
   </ItemGroup>
   <ItemGroup>
@@ -306,6 +299,33 @@
     <Resource Include="ingredientassets\sugar_empty.png" />
     <Resource Include="ingredientassets\vanilla_empty.png" />
     <Resource Include="ingredientassets\woodenspoon_empty.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_2_0_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_2_1_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_2_2_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\3_0_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_3_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\3_0_0.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\3_0_0_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_fix_1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\2_fix_2.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

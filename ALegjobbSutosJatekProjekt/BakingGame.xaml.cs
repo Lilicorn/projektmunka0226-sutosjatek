@@ -297,6 +297,10 @@ namespace ALegjobbSutosJatekProjekt
 
             theFiller();
             await usualtargetupdater();
+
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/2_fix_1.png", UriKind.Relative));
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/2_fix_2.png", UriKind.Relative));
+
         }
 
 
@@ -515,22 +519,26 @@ namespace ALegjobbSutosJatekProjekt
         }
         public async Task usualtargetupdater()
         {
-            if (step >= hozzávalók.Count) {  return; }
+            if (step > hozzávalók.Count) {  return; }
             transitionphase = true;
             if (hozzávalók[step].Repeats > 1)
             {
-                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_transiton.png", UriKind.Relative));
-                await Task.Delay(1500);
+                MessageBox.Show($"/targetassets/{section}_{step}_{repeater}_t.png");
+                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_t.png", UriKind.Relative));
+                await Task.Delay(1450);
+                MessageBox.Show($"/targetassets/{section}_{step}_{repeater}.png");
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
-                
+                await Task.Delay(50);
 
             }
             else
             {
-                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_transition.png", UriKind.Relative));
-                await Task.Delay(1500);
+                MessageBox.Show($"/targetassets/{section}_{step}_t.png");
+                Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_t.png", UriKind.Relative));
+                await Task.Delay(1450);
+                MessageBox.Show($"/targetassets/{section}_{step}.png");
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}.png", UriKind.Relative));
-               
+                await Task.Delay(50);
 
             }
             transitionphase = false;
@@ -539,8 +547,12 @@ namespace ALegjobbSutosJatekProjekt
         public async Task UNusualtargetupdater()
         {
             transitionphase = true;
-            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_transition.png", UriKind.Relative));
+            MessageBox.Show($"/targetassets/{section}_{step}_{repeater}_t.png");
+
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}_t.png", UriKind.Relative));
             await Task.Delay(500);
+            MessageBox.Show($"/targetassets/{section}_{step}_{repeater}.png");
+
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
           
             transitionphase = false;
