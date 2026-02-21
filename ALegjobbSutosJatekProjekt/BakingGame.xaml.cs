@@ -82,9 +82,8 @@ namespace ALegjobbSutosJatekProjekt
             }
             else 
             { 
-                huzigalt.Source = eredetihely.Source;
+                huzigalt.Source = eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}.png", UriKind.Relative));
                 eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}_empty.png", UriKind.Relative));
-
             }
 
             huzigalt.Width = eredetihely.ActualWidth;
@@ -150,7 +149,7 @@ namespace ALegjobbSutosJatekProjekt
                     if (repeater >= leccimukodj.Repeats)
                     {
                         step++;
-                        ere.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}{repeater}.png", UriKind.Relative)); // atirtam relativera hogy ne keljen mindent beirni ugh
+                        eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}{repeater}.png", UriKind.Relative)); // atirtam relativera hogy ne keljen mindent beirni ugh
                         eredetihely.Opacity = 0.3;
                         repeater = 0;
                         if (step != hozzávalók.Count)
@@ -189,25 +188,33 @@ namespace ALegjobbSutosJatekProjekt
             {
                 background.Children.Remove(huzigalt);
 
-                if (leccimukodj.Repeats > 1)
-                {
-                    eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}0.png", UriKind.Relative));
-                }
-                else
-                {
-                    eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}.png", UriKind.Relative));
-
-                }
-
                 if (leccimukodj.StepIndex < step)
                 {
                     eredetihely.Opacity = 0.3;
+
+                    if (leccimukodj.Repeats > 1)
+                    {
+                        eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}{leccimukodj.Repeats}.png", UriKind.Relative));
+                    }
+                    else
+                    {
+                        eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}_empty.png", UriKind.Relative));
+                    }
                 }
                 else
                 {
                     eredetihely.Opacity = 1;
-                }
 
+                    if (leccimukodj.Repeats > 1)
+                    {
+                        eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}0.png", UriKind.Relative));
+                    }
+                    else
+                    {
+                        eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}.png", UriKind.Relative));
+                    }
+
+                }
 
             }
 

@@ -294,5 +294,18 @@
   <ItemGroup>
     <Resource Include="ingredientassets\mixer_empty.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ingredientassets\bakingpowder_empty.PNG" />
+    <Resource Include="ingredientassets\cocoa_empty.png" />
+    <Resource Include="ingredientassets\cream_empty.PNG" />
+    <Resource Include="ingredientassets\flour_empty.PNG" />
+    <Resource Include="ingredientassets\grate_empty.PNG" />
+    <Resource Include="ingredientassets\knife_empty.PNG" />
+    <Resource Include="ingredientassets\milk_empty.png" />
+    <Resource Include="ingredientassets\salt_empty.PNG" />
+    <Resource Include="ingredientassets\sugar_empty.png" />
+    <Resource Include="ingredientassets\vanilla_empty.png" />
+    <Resource Include="ingredientassets\woodenspoon_empty.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
