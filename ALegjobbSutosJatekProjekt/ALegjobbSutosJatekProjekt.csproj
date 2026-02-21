@@ -291,5 +291,8 @@
   <ItemGroup>
     <Resource Include="top_1.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ingredientassets\mixer_empty.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

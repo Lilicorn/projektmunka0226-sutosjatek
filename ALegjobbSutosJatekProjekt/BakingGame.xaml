@@ -38,9 +38,9 @@
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" x:Name="ingredient0" Margin="15pt" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"  />
-                        <Image Grid.Column="1" x:Name="ingredient2" Margin="15pt" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
-                        <Image Grid.Column="2" x:Name="ingredient4" Margin="15pt" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="0" x:Name="ingredient0" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"  />
+                        <Image Grid.Column="1" x:Name="ingredient2" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="2" x:Name="ingredient4" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
 
                     </Grid>
 
@@ -51,8 +51,8 @@
                             <ColumnDefinition Width="2*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="1" x:Name="ingredient1" Margin="15pt" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
-                        <Image Grid.Column="2" x:Name="ingredient3" Margin="15pt" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="1" x:Name="ingredient1" Margin="0 0 0 5pt" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="2" x:Name="ingredient3" Margin="0 0 0 5pt" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
 
                     </Grid>
                 </Grid>

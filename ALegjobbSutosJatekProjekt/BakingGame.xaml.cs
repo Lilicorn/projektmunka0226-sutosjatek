@@ -77,10 +77,14 @@ namespace ALegjobbSutosJatekProjekt
             if (leccimukodj.Repeats > 1)
             {
                 huzigalt.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}single.png", UriKind.Relative));
+                eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}{repeater+1}.png", UriKind.Relative));
+
             }
             else 
             { 
                 huzigalt.Source = eredetihely.Source;
+                eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}_empty.png", UriKind.Relative));
+
             }
 
             huzigalt.Width = eredetihely.ActualWidth;
@@ -146,7 +150,7 @@ namespace ALegjobbSutosJatekProjekt
                     if (repeater >= leccimukodj.Repeats)
                     {
                         step++;
-                        ingredientSlots[leccimukodj.StepIndex + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative)); // atirtam relativera hogy ne keljen mindent beirni ugh
+                        ere.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}{repeater}.png", UriKind.Relative)); // atirtam relativera hogy ne keljen mindent beirni ugh
                         eredetihely.Opacity = 0.3;
                         repeater = 0;
                         if (step != hozzávalók.Count)
@@ -160,18 +164,19 @@ namespace ALegjobbSutosJatekProjekt
                     else
                     {
                         await UNusualtargetupdater();
-                        ingredientSlots[leccimukodj.StepIndex + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[leccimukodj.StepIndex].ImageSource}{repeater}.png", UriKind.Relative));
+                        eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}{repeater}.png", UriKind.Relative));
                         eredetihely.Opacity = 1;
                         instructionupdater();
 
                     }
                 }
                 else
-                {
-                    eredetihely.Opacity = 0.3;
+                { 
                     step++;
+                    eredetihely.Opacity = 0.3;
+                    eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}_empty.png", UriKind.Relative));
 
-                    if(step!= hozzávalók.Count)
+                    if (step!= hozzávalók.Count)
                     {
                         await usualtargetupdater();
                         instructionupdater();
@@ -183,7 +188,26 @@ namespace ALegjobbSutosJatekProjekt
             else if(step != hozzávalók.Count)
             {
                 background.Children.Remove(huzigalt);
-                eredetihely.Opacity = 1;
+
+                if (leccimukodj.Repeats > 1)
+                {
+                    eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}0.png", UriKind.Relative));
+                }
+                else
+                {
+                    eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}.png", UriKind.Relative));
+
+                }
+
+                if (leccimukodj.StepIndex < step)
+                {
+                    eredetihely.Opacity = 0.3;
+                }
+                else
+                {
+                    eredetihely.Opacity = 1;
+                }
+
 
             }
 
@@ -243,11 +267,11 @@ namespace ALegjobbSutosJatekProjekt
 
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.png", UriKind.Relative));
 
-            hozzávalók.Add(new ingredient("flour", "/ingredientassets/flour.png", 0, "add flour"));
-            hozzávalók.Add(new ingredient("baking powder", "/ingredientassets/bakingpowder.png", 1, "add baking powder"));
-            hozzávalók.Add(new ingredient("cocoa powder", "/ingredientassets/cocoa.png", 2, "add cocoa powder"));
-            hozzávalók.Add(new ingredient("salt", "/ingredientassets/salt.png", 3, "add salt"));
-            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 4, "mix dry ingredients"));
+            hozzávalók.Add(new ingredient("flour", "/ingredientassets/flour", 0, "add flour"));
+            hozzávalók.Add(new ingredient("baking powder", "/ingredientassets/bakingpowder", 1, "add baking powder"));
+            hozzávalók.Add(new ingredient("cocoa powder", "/ingredientassets/cocoa", 2, "add cocoa powder"));
+            hozzávalók.Add(new ingredient("salt", "/ingredientassets/salt", 3, "add salt"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 4, "mix dry ingredients"));
 
             theFiller();
         }
@@ -260,9 +284,9 @@ namespace ALegjobbSutosJatekProjekt
             theCleaner();
 
             hozzávalók.Add(new ingredient("butter", "/ingredientassets/butter_", 0, 2, "add butter x"));
-            hozzávalók.Add(new ingredient("sugar", "/ingredientassets/sugar.png", 1, "add sugar"));
+            hozzávalók.Add(new ingredient("sugar", "/ingredientassets/sugar", 1, "add sugar"));
             hozzávalók.Add(new ingredient("egg", "/ingredientassets/egg_", 2, 3, "add eggs x"));
-            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 3, "mix wet ingredients"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 3, "mix wet ingredients"));
 
             theFiller();
             await usualtargetupdater();
@@ -275,9 +299,9 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("milk", "/ingredientassets/milk.png", 0, "add milk"));
-            hozzávalók.Add(new ingredient("vanilla", "/ingredientassets/vanilla.png", 1, "add vanilla"));
-            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 2, "mix"));
+            hozzávalók.Add(new ingredient("milk", "/ingredientassets/milk", 0, "add milk"));
+            hozzávalók.Add(new ingredient("vanilla", "/ingredientassets/vanilla", 1, "add vanilla"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 2, "mix"));
 
             theFiller();
             await usualtargetupdater();
@@ -289,8 +313,8 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("drybowl", "/ingredientassets/drybowl.png", 0, "combine mixtures"));
-            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 1, "mix again"));
+            hozzávalók.Add(new ingredient("drybowl", "/ingredientassets/drybowl", 0, "combine mixtures"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 1, "mix again"));
 
             theFiller();
             await usualtargetupdater();
@@ -302,7 +326,7 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("batter", "/ingredientassets/batter.png", 0, "pour batter into tray"));
+            hozzávalók.Add(new ingredient("batter", "/ingredientassets/batter", 0, "pour batter into tray"));
 
             theFiller();
             await usualtargetupdater();
@@ -314,7 +338,7 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("batter in tray", "/ingredientassets/fulltray.png", 0, "put into oven"));
+            hozzávalók.Add(new ingredient("batter in tray", "/ingredientassets/fulltray", 0, "put into oven"));
 
             theFiller();
 
@@ -328,7 +352,7 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("cream", "/ingredientassets/cream.png", 0, "add whipping cream"));
+            hozzávalók.Add(new ingredient("cream", "/ingredientassets/cream", 0, "add whipping cream"));
 
             theFiller();
 
@@ -342,7 +366,7 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer.png", 0, "whip to foam"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 0, "whip to foam"));
 
             theFiller();
 
@@ -358,7 +382,7 @@ namespace ALegjobbSutosJatekProjekt
 
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/{section}_{step}_{repeater}.png", UriKind.Relative));
 
-            hozzávalók.Add(new ingredient("grate", "/ingredientassets/grate.png", 0, "put grate into bowl"));
+            hozzávalók.Add(new ingredient("grate", "/ingredientassets/grate", 0, "put grate into bowl"));
             hozzávalók.Add(new ingredient("chocolate", "/ingredientassets/chocolate_", 1, 3, "grate chocolate x"));
             hozzávalók.Add(new ingredient("butter", "/ingredientassets/butter_", 2, 2, "add butter x"));
 
@@ -372,8 +396,8 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("choco bowl", "/ingredientassets/chocobowl.png", 0, "combine bowls"));
-            hozzávalók.Add(new ingredient("wooden spoon", "/ingredientassets/woodenspoon.png", 1, "stir gently"));
+            hozzávalók.Add(new ingredient("choco bowl", "/ingredientassets/chocobowl", 0, "combine bowls"));
+            hozzávalók.Add(new ingredient("wooden spoon", "/ingredientassets/woodenspoon", 1, "stir gently"));
 
             theFiller();
             await usualtargetupdater();
@@ -423,7 +447,7 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("knife", "/ingredientassets/knife.png", 0, "slice cake"));
+            hozzávalók.Add(new ingredient("knife", "/ingredientassets/knife", 0, "slice cake"));
 
             theFiller();
             await usualtargetupdater();
@@ -436,7 +460,7 @@ namespace ALegjobbSutosJatekProjekt
             theCleaner();
 
             hozzávalók.Add(new ingredient("creambowl", "/ingredientassets/creambowl_", 0, 4, "spread cream x"));
-            hozzávalók.Add(new ingredient("layer", "/ingredientassets/cakelayer.png", 1, "stack cake layers"));
+            hozzávalók.Add(new ingredient("layer", "/ingredientassets/cakelayer", 1, "stack cake layers"));
 
             theFiller();
             await usualtargetupdater();
@@ -474,7 +498,7 @@ namespace ALegjobbSutosJatekProjekt
                 }
                 else
                 {
-                    ingredientSlots[i + picoffset].Source = new BitmapImage(new Uri(hozzávalók[i].ImageSource, UriKind.Relative));
+                    ingredientSlots[i + picoffset].Source = new BitmapImage(new Uri($"{hozzávalók[i].ImageSource}.png", UriKind.Relative));
                 }
 
                 ingredientSlots[i + picoffset].Tag = hozzávalók[i].TagName;
