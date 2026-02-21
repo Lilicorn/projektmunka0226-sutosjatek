@@ -467,7 +467,7 @@ namespace ALegjobbSutosJatekProjekt
         //innnentol ok
         public async void Section9()
         {
-            picoffset = 1;
+            picoffset = 0;
 
             theCleaner();
 
@@ -476,6 +476,7 @@ namespace ALegjobbSutosJatekProjekt
             hozzávalók.Add(new ingredient("grate", "/ingredientassets/grate", 0, "put grate into bowl"));
             hozzávalók.Add(new ingredient("chocolate", "/ingredientassets/chocolate_", 1, 3, "grate chocolate x"));
             hozzávalók.Add(new ingredient("butter", "/ingredientassets/butter_", 2, 2, "add butter x"));
+            hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 3, "mix"));
 
             await usualtargetupdater();
 
@@ -502,10 +503,15 @@ namespace ALegjobbSutosJatekProjekt
 
             theCleaner();
 
-            hozzávalók.Add(new ingredient("choco bowl", "/ingredientassets/chocobowl", 0, "combine bowls"));
+            hozzávalók.Add(new ingredient("CREAM bowl", "/ingredientassets/creambowl", 0, "combine bowls"));
             hozzávalók.Add(new ingredient("wooden spoon", "/ingredientassets/woodenspoon", 1, "stir gently"));
 
             await usualtargetupdater();
+
+            transitionphase = true;
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/10_fix.png", UriKind.Relative));
+            transitionphase = false;
 
             theMarginFixer();
             theFiller();
@@ -516,12 +522,34 @@ namespace ALegjobbSutosJatekProjekt
         public async void Section11()
         {
             theCleaner();
-            Instructions.Content = "oven is done!";
-            theMarginFixer();
+            Instructions.Opacity=0;
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_0.png", UriKind.Relative));
-            await Task.Delay(1500);
+            await Task.Delay(500);
                 Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_1.png", UriKind.Relative));
-            await Task.Delay(1500);
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_2.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"", UriKind.Relative));
+            await Task.Delay(500);
+
+            theMarginFixer();
+            Instructions.Opacity = 1;
+            Instructions.Content = "oven is done!";
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_3.png", UriKind.Relative));
+            await Task.Delay(500); 
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_4.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_5.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_6.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_7.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_8.png", UriKind.Relative));
+            await Task.Delay(500);
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_9.png", UriKind.Relative));
+            await Task.Delay(500);
+
             //nwemtom kell-e meg kep esetleg? 
 
             section++;
@@ -539,7 +567,7 @@ namespace ALegjobbSutosJatekProjekt
 
             hozzávalók.Add(new ingredient("knife", "/ingredientassets/knife", 0, "slice cake"));
 
-            await usualtargetupdater();
+            Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/12_0.png", UriKind.Relative));
 
             theMarginFixer();
             theFiller();
@@ -567,7 +595,7 @@ namespace ALegjobbSutosJatekProjekt
         public async void ending()
         {
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/end.png", UriKind.Relative));
-            Instructions.Content = "congratulato";
+            Instructions.Content = "congratulations! you're done!";
             App.phase= 2;
 
             await Task.Delay(2000);
@@ -655,20 +683,25 @@ namespace ALegjobbSutosJatekProjekt
         {
             var cucc = new ThicknessConverter();
 
-            if (picoffset == 2)
+            if (picoffset == 2) 
             {
                 ingredientsection.Margin = (Thickness)cucc.ConvertFromString("-40pt 40pt -40pt -80pt");
+                Usualtarget.Margin = (Thickness)cucc.ConvertFromString("10pt -50pt 10pt 50pt");
+
             }
             else if (section==11)
             { 
                 Usualtarget.Margin = (Thickness)cucc.ConvertFromString("-150pt -50pt 150pt 50pt");
+                ingredientsection.Margin = (Thickness)cucc.ConvertFromString("0 -30pt 0 30pt");
             }
             else
             {
                 ingredientsection.Margin = (Thickness)cucc.ConvertFromString("0 -30pt 0 30pt");
+                Usualtarget.Margin = (Thickness)cucc.ConvertFromString("10pt -50pt 10pt 50pt");
+
             }
 
-            
+
         }
 
     }

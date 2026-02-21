@@ -150,7 +150,6 @@
     <Resource Include="ingredientassets\butter_1.png" />
     <Resource Include="ingredientassets\butter_2.png" />
     <Resource Include="ingredientassets\cakelayer.png" />
-    <Resource Include="ingredientassets\chocobowl.png" />
     <Resource Include="ingredientassets\chocolate_0.png" />
     <Resource Include="ingredientassets\chocolate_1.png" />
     <Resource Include="ingredientassets\chocolate_2.png" />
@@ -382,6 +381,43 @@
   <ItemGroup>
     <Resource Include="targetassets\9_fix_3.PNG" />
     <Resource Include="targetassets\9_fix_4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\9_1_0_t.PNG" />
+    <Resource Include="targetassets\9_1_1_t.PNG" />
+    <Resource Include="targetassets\9_1_2_t.PNG" />
+    <Resource Include="targetassets\9_2_0_t.PNG" />
+    <Resource Include="targetassets\9_2_1_t.PNG" />
+    <Resource Include="targetassets\9_3.PNG" />
+    <Resource Include="targetassets\9_3_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\10_0_t.PNG" />
+    <Resource Include="targetassets\10_1_t.PNG" />
+    <Resource Include="targetassets\10_fix.PNG" />
+    <Resource Include="targetassets\11_0_t.PNG" />
+    <Resource Include="targetassets\11_2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\11_3.PNG" />
+    <Resource Include="targetassets\11_4.PNG" />
+    <Resource Include="targetassets\11_5.PNG" />
+    <Resource Include="targetassets\11_6.PNG" />
+    <Resource Include="targetassets\11_7.PNG" />
+    <Resource Include="targetassets\11_8.PNG" />
+    <Resource Include="targetassets\11_9.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\13_0.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetassets\13_0_0_t.PNG" />
+    <Resource Include="targetassets\13_0_1_t.PNG" />
+    <Resource Include="targetassets\13_0_2_t.PNG" />
+    <Resource Include="targetassets\13_0_3_t.PNG" />
+    <Resource Include="targetassets\13_0_t.PNG" />
+    <Resource Include="targetassets\13_1_t.PNG" />
+    <Resource Include="targetassets\14_0_0_t.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
