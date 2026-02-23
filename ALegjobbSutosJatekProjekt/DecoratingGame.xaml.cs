@@ -39,6 +39,7 @@ namespace ALegjobbSutosJatekProjekt
         // mar csak azt nem tudom hoyg szukseg van-e osztalyokra itt de ezt te dontsd el bye
         //    ILLETVE4!!!!!! perspektiva miatt topside-bol 2 AZAZ KETTO frame is van, watch out
         //    topside_11 es topside_12
+        // szerintem defautként legyen none (0) mert vegulis a nullarol van diszitve x
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e) // ez kell mert igy reszponziv az asztal es a gombospanel
         {

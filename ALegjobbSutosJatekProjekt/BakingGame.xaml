@@ -27,7 +27,7 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid Margin="0 -30pt 0 30pt" Grid.Column="1" x:Name="ingredientsection" Background="Transparent" >
+                <Grid Margin="0 -30pt 0 30pt" Grid.Column="1"  x:Name="ingredientsection" Background="Transparent" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
@@ -38,9 +38,9 @@
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" x:Name="ingredient0" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"  />
-                        <Image Grid.Column="1" x:Name="ingredient2" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
-                        <Image Grid.Column="2" x:Name="ingredient4" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="0" x:Name="ingredient0" Tag=""  MouseLeftButtonDown="MouseDown"  />
+                        <Image Grid.Column="1" x:Name="ingredient2" Tag=""  MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="2" x:Name="ingredient4" Tag=""  MouseLeftButtonDown="MouseDown"/>
 
                     </Grid>
 
@@ -51,12 +51,12 @@
                             <ColumnDefinition Width="2*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="1" x:Name="ingredient1"  Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
-                        <Image Grid.Column="2" x:Name="ingredient3" Tag="" Source="/assets/ingplaceholder.JPG" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="1" x:Name="ingredient1"  Tag="" MouseLeftButtonDown="MouseDown"/>
+                        <Image Grid.Column="2" x:Name="ingredient3" Tag=""  MouseLeftButtonDown="MouseDown"/>
 
                     </Grid>
                 </Grid>
-                <Image Source="/targetassets/1_0.png" Margin="10pt,-50pt,10pt,50pt" Grid.Column="2" x:Name="Usualtarget" Tag=""/>
+                <Image Source="/targetassets/1_0.png" Margin="-10pt -90pt -10pt 70pt" Grid.Column="2" x:Name="Usualtarget" Tag=""/>
 
             </Grid>
 

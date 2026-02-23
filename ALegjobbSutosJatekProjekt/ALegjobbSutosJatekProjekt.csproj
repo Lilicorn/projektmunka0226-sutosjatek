@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -418,6 +419,9 @@
     <Resource Include="targetassets\13_0_t.PNG" />
     <Resource Include="targetassets\13_1_t.PNG" />
     <Resource Include="targetassets\14_0_0_t.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="batter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
