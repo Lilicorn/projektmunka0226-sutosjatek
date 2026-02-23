@@ -20,26 +20,12 @@ namespace ALegjobbSutosJatekProjekt
     /// </summary>
     public partial class DecoratingGame : Page
     {
+        private string currentCategory = ""; //WHERE THE FUCK ARE WE /j
         public DecoratingGame()
         {
             InitializeComponent();
-        }
 
-        //   oldalso gombokra kattintva valt a listbox tartalma
-        // (listak i think) illetve az is, hogy az egyes listbox elemekre
-        // valo kattintassal eppen melyik framebe / "retegbe"
-        // toltjuk be az adott kepet / "dekoraciot"
-        //
-        //   emellett arra is gondoltam hogy minden dekornak lesz
-        // egy thumbnailje is csakhoyg lassa a kuncsaft mit rak eppen
-        //   tehat listboxban a kep az "topfrosting_1_thumb" lesz,
-        // a framebe meg a "topfrosting_1" lesz betoltve
-        //          -->    topfrosting = epp melyik panel / reteg van kivalasztva
-        //          -->    1 = listaban valo indexe (0 az a None opcio / ures imgsource)
-        // mar csak azt nem tudom hoyg szukseg van-e osztalyokra itt de ezt te dontsd el bye
-        //    ILLETVE4!!!!!! perspektiva miatt topside-bol 2 AZAZ KETTO frame is van, watch out
-        //    topside_11 es topside_12
-        // szerintem defautként legyen none (0) mert vegulis a nullarol van diszitve x
+        }
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e) // ez kell mert igy reszponziv az asztal es a gombospanel
         {
@@ -54,6 +40,78 @@ namespace ALegjobbSutosJatekProjekt
             topfrosting_loader.Height = decorListing.ActualHeight * (1 / 7.0) / 1.2;
             coveringcolor_loader.Height = decorListing.ActualHeight * (1 / 7.0) / 1.2;
             stand_loader.Height = decorListing.ActualHeight * (1 / 7.0) / 1.2;
+        }
+
+        private void Loader_Click(object sender, RoutedEventArgs e)
+        {
+            Button clicked = sender as Button; // Need this for the button name
+
+            // We get what we need from button,, minus the loader part 👍🔥
+            currentCategory = clicked.Name.Replace("_loader", "");
+
+            LoadDecorImages(currentCategory);
+        }
+
+        private void LoadDecorImages(string category)
+        {
+            decorListing.Items.Clear();
+
+            for (int i = 1; i <= 4; i++)
+            {
+                string path = $"/decorassets/{category}/{category}_{i}.png";
+                //HEADS UP THE IMAGES LOOK GOD AWFUL IN THE CURRENT STATE (they dont even resize currently),,
+                //but it works thats all that matters we fix that when we get there,, maybe thumbnails?? or resize them correctly??
+                decorListing.Items.Add(path);
+            }
+        }
+
+        private void decorListing_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (decorListing.SelectedItem == null) //yknow that one code we made where we needed this? yeah same shit
+                return;
+
+            string selectedImage = decorListing.SelectedItem.ToString();
+
+            ApplyDecorToCake(selectedImage);
+        }
+
+        private void ApplyDecorToCake(string imagePath)
+        {
+            //,, I looked this up idk how BitmapImage works entirely but its good for images apperantnly so,,
+            BitmapImage bitmap = new BitmapImage(new Uri(imagePath, UriKind.Relative));
+
+            // Im forgeting switch exists but its easier this way
+            switch (currentCategory)
+            {
+                case "top":
+                    top_frame.Source = bitmap;
+                    break;
+
+                case "topside":
+                    topside_frame1.Source = bitmap;
+                    topside_frame2.Source = bitmap;
+                    break;
+
+                case "midside":
+                    midside_frame.Source = bitmap;
+                    break;
+
+                case "bottomside":
+                    bottomside_frame.Source = bitmap;
+                    break;
+
+                case "topfrosting":
+                    topfrosting_frame.Source = bitmap;
+                    break;
+
+                case "coveringcolor":
+                    coveringcolor_frame.Source = bitmap;
+                    break;
+
+                case "stand":
+                    stand_frame.Source = bitmap;
+                    break;
+            }
         }
     }
 }

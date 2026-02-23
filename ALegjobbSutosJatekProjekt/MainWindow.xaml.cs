@@ -24,7 +24,8 @@ namespace ALegjobbSutosJatekProjekt
         public MainWindow()
         {
             InitializeComponent();
-            Minden.Navigate(new IntroPage());
+            Minden.Navigate(new IntroPage()); //Normal
+            //Minden.Navigate(new DecoratingGame()); // Testing so i dont have to redo the whole baking part for the hundred time
 
         }
     }
