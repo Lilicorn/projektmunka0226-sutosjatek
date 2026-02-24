@@ -686,7 +686,7 @@ namespace ALegjobbSutosJatekProjekt
             if (picoffset == 2) 
             {
                 ingredientsection.Margin = (Thickness)cucc.ConvertFromString("-80pt 30pt -80pt -80pt");
-                Usualtarget.Margin = (Thickness)cucc.ConvertFromString("-10pt -90pt -10pt 70pt");
+                Usualtarget.Margin = (Thickness)cucc.ConvertFromString($"-10pt -{this.ActualHeight * 0.7}pt -10pt {this.ActualHeight *1.5}pt");
 
             }
             else if (section==11)
@@ -696,8 +696,9 @@ namespace ALegjobbSutosJatekProjekt
             }
             else
             {
+                Usualtarget.Margin = (Thickness)cucc.ConvertFromString($"-10pt -{this.ActualHeight * 0.7}pt -10pt {this.ActualHeight *1.5}pt");
+
                 ingredientsection.Margin = (Thickness)cucc.ConvertFromString("0 -30pt 0 30pt");
-                Usualtarget.Margin = (Thickness)cucc.ConvertFromString("-10pt -90pt -10pt 70pt");
 
             }
 
