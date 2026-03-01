@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
 
-        <Label Padding="50pt 5pt" FontSize="30" Panel.ZIndex="1" x:Name="Instructions" Content="placeholder" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" BorderBrush="Black" BorderThickness="5"></Label>
+        <Label Padding="50pt 5pt" FontSize="30" Panel.ZIndex="1" x:Name="Instructions" Content="placeholder" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="HotPink" BorderBrush="White" Foreground="White" BorderThickness="5"></Label>
 
         <Grid Grid.Row="1">
             <Grid>
@@ -64,7 +64,7 @@
 
         </Grid>
 
-        <Image Panel.ZIndex="-2" Source="/otherassets/background1.png" Stretch="UniformToFill" Margin="0,0,0,0" Grid.RowSpan="2"></Image> <!--OHHHHHHH ja hoyg itt is van rowspan 😭😭😭😭😭😭😭😭😭😭😭😭😭😭-->
+        <Image Panel.ZIndex="-2" Source="/otherassets/background1.png" Stretch="UniformToFill" Margin="0,0,0,0" Grid.RowSpan="2"></Image>
         <Canvas Panel.ZIndex="0" x:Name="background" Background="Transparent"/>
 
 

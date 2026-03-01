@@ -8,7 +8,46 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="OutroPage">
 
-    <Grid>
-        
+    <Grid Background="#FFFFDAFC">
+        <Image Source="/otherassets/background1.png" Stretch="UniformToFill" OpacityMask="#B2C1C1C1"></Image>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+
+                <Image>
+
+                </Image>
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="\otherassets\intrologo.png" Stretch="Uniform"/>
+                <Button x:Name="play" Grid.Row="1" Click="Play_Click" Style="{StaticResource GameButtonStyle}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/replaybutton.PNG" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="more" Grid.Row="2" Margin="20pt 10pt" Content="MORE"  Click="more_Click" Style="{StaticResource GameButtonStyle}" FontSize="20pt" FontFamily="Gill Sans Ultra Bold" Foreground="White">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/otherassets/morebutton.PNG" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+
+            </Grid>
+        </Grid>
+
     </Grid>
 </Page>

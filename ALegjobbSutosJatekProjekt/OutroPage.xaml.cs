@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,18 @@ namespace ALegjobbSutosJatekProjekt
         public OutroPage()
         {
             InitializeComponent();
+
         }
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new IntroPage());
+        }
+
+
+        private void more_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://sutos.jatek-online.hu/");
+        }
+
     }
 }

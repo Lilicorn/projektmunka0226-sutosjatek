@@ -17,16 +17,16 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                <Button  Click="Loader_Click" x:Name="top_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="1" Foreground="White"></Button>
-                <Button  Click="Loader_Click" x:Name="topside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="2" Foreground="White"></Button>
-                <Button  Click="Loader_Click" x:Name="midside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="3" Foreground="White"></Button>
-                <Button  Click="Loader_Click" x:Name="bottomside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="4" Foreground="White"></Button>
-                <Button  Click="Loader_Click" x:Name="topfrosting_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="5" Foreground="White"></Button>
-                <Button  Click="Loader_Click" x:Name="coveringcolor_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="6" Foreground="White"></Button>
-                <Button  Click="Loader_Click" x:Name="stand_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="7" Foreground="White"></Button>
+                <Button  Click="Loader_Click" x:Name="top_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="1" Foreground="White" Background="HotPink" BorderBrush="White"></Button>
+                <Button  Click="Loader_Click" x:Name="topside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="2" Foreground="White" Background="HotPink" BorderBrush="White"></Button>
+                <Button  Click="Loader_Click" x:Name="midside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="3" Foreground="White" Background="HotPink" BorderBrush="White"></Button>
+                <Button  Click="Loader_Click" x:Name="bottomside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="4" Foreground="White" Background="HotPink" BorderBrush="White"></Button>
+                <Button  Click="Loader_Click" x:Name="topfrosting_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="5" Foreground="White" Background="HotPink" BorderBrush="White"></Button>
+                <Button  Click="Loader_Click" x:Name="coveringcolor_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="6" Foreground="White" Background="HotPink" BorderBrush="White"></Button>
+                <Button  Click="Loader_Click" x:Name="stand_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="7" Foreground="White" Background="HotPink" BorderBrush="White"></Button>
             </StackPanel>
 
-            <ListBox x:Name="decorListing" SelectionChanged="decorListing_SelectionChanged"  Margin="0 15pt 15pt 15pt" Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListBox x:Name="decorListing" SelectionChanged="decorListing_SelectionChanged"  Margin="0 15pt 15pt 15pt" Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="HotPink" BorderBrush="White">
 
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
