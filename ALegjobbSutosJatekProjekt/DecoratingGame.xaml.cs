@@ -113,5 +113,10 @@ namespace ALegjobbSutosJatekProjekt
                     break;
             }
         }
+
+        private void Outro_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new OutroPage());
+        }
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ALegjobbSutosJatekProjekt
 {
@@ -21,9 +22,8 @@ namespace ALegjobbSutosJatekProjekt
     /// </summary>
     public partial class OutroPage : Page
     {
-        public OutroPage()
+        public OutroPage() 
         {
-            InitializeComponent();
 
         }
         private void Play_Click(object sender, RoutedEventArgs e)

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ALegjobbSutosJatekProjekt"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="OutroPage">
 
     <Grid Background="#FFFFDAFC">
@@ -37,7 +37,7 @@
                 <Image Grid.Row="0" Source="\otherassets\intrologo.png" Stretch="Uniform"/>
                 <Button x:Name="play" Grid.Row="1" Click="Play_Click" Style="{StaticResource GameButtonStyle}">
                     <Button.Background>
-                        <ImageBrush ImageSource="/replaybutton.PNG" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="/otherassets/replaybutton.PNG" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="more" Grid.Row="2" Margin="20pt 10pt" Content="MORE"  Click="more_Click" Style="{StaticResource GameButtonStyle}" FontSize="20pt" FontFamily="Gill Sans Ultra Bold" Foreground="White">
