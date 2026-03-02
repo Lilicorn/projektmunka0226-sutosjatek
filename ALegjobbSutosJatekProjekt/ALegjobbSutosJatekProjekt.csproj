@@ -132,6 +132,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="decorassets\coveringcolor\coveringcolor_1.png" />
+    <Resource Include="decorassets\stand\stand_1.PNG" />
+    <Resource Include="decorassets\topfrosting\topfrosting_1.png" />
     <Resource Include="otherassets\background1.png" />
     <Resource Include="otherassets\background2.png" />
     <Resource Include="otherassets\intrologo.png" />
@@ -203,7 +206,6 @@
     <Resource Include="decorassets\basecake.PNG" />
     <Resource Include="decorassets\bottomside\bottomside_1.PNG" />
     <Resource Include="decorassets\midside\midside_1.PNG" />
-    <Resource Include="decorassets\stand\stand_1.PNG" />
     <Resource Include="decorassets\topside\topside_11.PNG" />
     <Resource Include="decorassets\topside\topside_12.PNG" />
     <Resource Include="decorassets\top\top_1.PNG" />
@@ -431,9 +433,6 @@
     <Resource Include="decorassets\coveringcolor\coveringcolor_4.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="decorassets\coveringcolor\coveringcolor_1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="decorassets\topfrosting\topfrosting_2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -441,9 +440,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="decorassets\topfrosting\topfrosting_4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="decorassets\topfrosting\topfrosting_1.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="decorassets\stand\stand_2.png" />
