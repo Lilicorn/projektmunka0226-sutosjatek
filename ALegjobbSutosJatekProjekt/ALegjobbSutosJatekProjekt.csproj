@@ -135,6 +135,9 @@
     <Resource Include="decorassets\coveringcolor\coveringcolor_1.png" />
     <Resource Include="decorassets\stand\stand_1.PNG" />
     <Resource Include="decorassets\topfrosting\topfrosting_1.png" />
+    <Resource Include="decorassets\topfrosting\topfrosting_2.png" />
+    <Resource Include="decorassets\topfrosting\topfrosting_3.png" />
+    <Resource Include="decorassets\topfrosting\topfrosting_4.png" />
     <Resource Include="otherassets\background1.png" />
     <Resource Include="otherassets\background2.png" />
     <Resource Include="otherassets\intrologo.png" />
@@ -431,15 +434,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="decorassets\coveringcolor\coveringcolor_4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="decorassets\topfrosting\topfrosting_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="decorassets\topfrosting\topfrosting_3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="decorassets\topfrosting\topfrosting_4.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="decorassets\stand\stand_2.png" />
