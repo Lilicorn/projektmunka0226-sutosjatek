@@ -450,5 +450,23 @@
   <ItemGroup>
     <Resource Include="decorassets\stand\stand_4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="otherassets\replaybutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="decorassets\top\top_2.png" />
+    <Resource Include="decorassets\top\top_3.png" />
+    <Resource Include="decorassets\top\top_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="decorassets\midside\midside_2.png" />
+    <Resource Include="decorassets\midside\midside_3.png" />
+    <Resource Include="decorassets\midside\midside_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="decorassets\bottomside\bottomside_2.png" />
+    <Resource Include="decorassets\bottomside\bottomside_3.png" />
+    <Resource Include="decorassets\bottomside\bottomside_4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

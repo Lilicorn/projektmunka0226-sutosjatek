@@ -24,6 +24,7 @@ namespace ALegjobbSutosJatekProjekt
         public DecoratingGame()
         {
             InitializeComponent();
+            LoadDecorImages("top");
 
         }
 
