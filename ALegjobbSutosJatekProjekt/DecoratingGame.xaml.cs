@@ -30,9 +30,7 @@ namespace ALegjobbSutosJatekProjekt
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e) // ez kell mert igy reszponziv az asztal es a gombospanel
         {
-            var cucc = new ThicknessConverter();
-            Thickness leccives = (Thickness)cucc.ConvertFromString($"0 {this.ActualHeight * (1 / 3.0)} 0 0");
-            table.Margin = leccives;
+            table.Margin = new Thickness(0, this.ActualHeight * (1 / 3.0), 0, 0);
 
             top_loader.Height = decorListing.ActualHeight * (1 / 7.0) / 1.2;
             topside_loader.Height = decorListing.ActualHeight * (1 / 7.0) / 1.2;
