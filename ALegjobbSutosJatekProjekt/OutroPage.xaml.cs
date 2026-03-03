@@ -24,7 +24,7 @@ namespace ALegjobbSutosJatekProjekt
     {
         public OutroPage() 
         {
-
+            InitializeComponent();
         }
         private void Play_Click(object sender, RoutedEventArgs e)
         {

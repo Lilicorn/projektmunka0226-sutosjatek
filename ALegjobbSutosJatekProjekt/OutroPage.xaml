@@ -35,7 +35,7 @@
                 </Grid.RowDefinitions>
 
                 <Image Grid.Row="0" Source="\otherassets\intrologo.png" Stretch="Uniform"/>
-                <Button x:Name="play" Grid.Row="1" Click="Play_Click" Style="{StaticResource GameButtonStyle}">
+                <Button x:Name="replay" Grid.Row="1" Click="Play_Click" Style="{StaticResource GameButtonStyle}">
                     <Button.Background>
                         <ImageBrush ImageSource="/otherassets/replaybutton.PNG" Stretch="Uniform"/>
                     </Button.Background>
