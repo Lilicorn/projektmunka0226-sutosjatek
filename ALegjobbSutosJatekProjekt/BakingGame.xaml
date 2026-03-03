@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ALegjobbSutosJatekProjekt"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="800"
-      Title="BakingGame">
+      Title="BakingGame" SizeChanged="theMarginUpdater">
 
     <Grid>
 
@@ -16,7 +16,11 @@
         </Grid.RowDefinitions>
 
 
-        <Label Padding="50pt 5pt" FontSize="30" Panel.ZIndex="1" x:Name="Instructions" Content="placeholder" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="HotPink" BorderBrush="White" Foreground="White" BorderThickness="5"></Label>
+        <Label Padding="75 20" FontSize="30" Panel.ZIndex="-1" x:Name="Instructions" Content="placeholder" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" BorderThickness="5" FontFamily="Gill Sans Ultra Bold">
+            <Label.Background>
+                <ImageBrush ImageSource="/morebutton.PNG" Stretch="Fill"/>
+            </Label.Background>
+        </Label>
 
         <Grid Grid.Row="1">
             <Grid>
@@ -27,7 +31,7 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid Margin="0 -30pt 0 30pt" Grid.Column="1"  x:Name="ingredientsection" Background="Transparent" >
+                <Grid Margin="0 -30 0 30" Grid.Column="1"  x:Name="ingredientsection" Background="Transparent" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
@@ -56,7 +60,7 @@
 
                     </Grid>
                 </Grid>
-                <Image Source="/targetassets/1_0.png" Margin="-10pt -90pt -10pt 70pt" Grid.Column="2" x:Name="Usualtarget" Tag=""/>
+                <Image Source="/targetassets/1_0.png" Margin="-10 -120 -10 90" Grid.Column="2" x:Name="Usualtarget" Tag=""/>
 
             </Grid>
 

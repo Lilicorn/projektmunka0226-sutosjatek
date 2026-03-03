@@ -266,7 +266,7 @@ namespace ALegjobbSutosJatekProjekt
 
 
 
-        public void Section1()
+        public async void Section1()
         {
             picoffset = 0;
 
@@ -274,11 +274,14 @@ namespace ALegjobbSutosJatekProjekt
 
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/1_0.png", UriKind.Relative));
 
+
             hozzávalók.Add(new ingredient("flour", "/ingredientassets/flour", 0, "add flour"));
             hozzávalók.Add(new ingredient("baking powder", "/ingredientassets/bakingpowder", 1, "add baking powder"));
             hozzávalók.Add(new ingredient("cocoa powder", "/ingredientassets/cocoa", 2, "add cocoa powder"));
             hozzávalók.Add(new ingredient("salt", "/ingredientassets/salt", 3, "add salt"));
             hozzávalók.Add(new ingredient("mixer", "/ingredientassets/mixer", 4, "mix dry ingredients"));
+
+            await Task.Delay(1);
 
             theMarginFixer();
             theFiller();
@@ -681,29 +684,52 @@ namespace ALegjobbSutosJatekProjekt
 
         public void theMarginFixer()
         {
-            var cucc = new ThicknessConverter();
+            Instructions.Padding = new Thickness(this.ActualWidth * 0.05, this.ActualHeight * 0.03, this.ActualWidth * 0.05, this.ActualHeight * 0.03);
+            Instructions.FontSize = this.ActualHeight * 0.06;
 
-            if (picoffset == 2) 
+
+            if (picoffset == 2)
             {
-                ingredientsection.Margin = (Thickness)cucc.ConvertFromString("-80pt 30pt -80pt -80pt");
-                Usualtarget.Margin = (Thickness)cucc.ConvertFromString($"-10pt -{this.ActualHeight * 0.7}pt -10pt {this.ActualHeight *1.5}pt");
+                ingredientsection.Margin = new Thickness(this.ActualWidth * 0.1 * -1, this.ActualHeight * 0.06, this.ActualWidth * 0.1 * -1, this.ActualHeight * 0.16 * -1);
+                Usualtarget.Margin = new Thickness(this.ActualHeight * 0.08 * -1, this.ActualHeight * 0.2 * -1, this.ActualHeight * 0.08 * -1, this.ActualHeight * 0.2);
 
             }
-            else if (section==11)
-            { 
-                Usualtarget.Margin = (Thickness)cucc.ConvertFromString("-150pt -50pt 150pt 50pt");
-                ingredientsection.Margin = (Thickness)cucc.ConvertFromString("0 -30pt 0 30pt");
+            else if (section == 11)
+            {
+                Usualtarget.Margin = new Thickness(this.ActualHeight * 0.3 * -1, this.ActualHeight * 0.1 * -1, this.ActualHeight * 0.3, this.ActualHeight * 0.1);
+                ingredientsection.Margin = new Thickness(0, this.ActualHeight * 0.1 * -1, 0, this.ActualHeight * 0.1);
+
             }
             else
             {
-                Usualtarget.Margin = (Thickness)cucc.ConvertFromString($"-10pt -{this.ActualHeight * 0.7}pt -10pt {this.ActualHeight *1.5}pt");
-
-                ingredientsection.Margin = (Thickness)cucc.ConvertFromString("0 -30pt 0 30pt");
-
+                Usualtarget.Margin = new Thickness(this.ActualHeight * 0.08 * -1, this.ActualHeight * 0.2 * -1, this.ActualHeight * 0.08 * -1, this.ActualHeight * 0.2);
+                ingredientsection.Margin = new Thickness(0, this.ActualHeight * 0.1 * -1, 0, this.ActualHeight * 0.1);
             }
-
-
         }
 
+        private void theMarginUpdater(object sender, SizeChangedEventArgs e)
+        {
+            Instructions.Padding = new Thickness(this.ActualWidth * 0.05, this.ActualHeight * 0.03, this.ActualWidth * 0.05, this.ActualHeight * 0.03);
+            Instructions.FontSize = this.ActualHeight * 0.06;
+
+
+            if (picoffset == 2)
+            {
+                ingredientsection.Margin = new Thickness(this.ActualWidth *0.1  * -1, this.ActualHeight * 0.06, this.ActualWidth * 0.1 * -1, this.ActualHeight * 0.16 * -1);
+                Usualtarget.Margin = new Thickness(this.ActualHeight * 0.08 * -1, this.ActualHeight * 0.2 * -1, this.ActualHeight * 0.08 * -1, this.ActualHeight * 0.2);
+
+            }
+            else if (section == 11)
+            {
+                Usualtarget.Margin = new Thickness(this.ActualHeight * 0.3 * -1, this.ActualHeight *0.1  * -1, this.ActualHeight * 0.3, this.ActualHeight * 0.1);
+                ingredientsection.Margin = new Thickness(0, this.ActualHeight * 0.1 * -1, 0, this.ActualHeight * 0.1);
+
+            }
+            else
+            {
+                Usualtarget.Margin = new Thickness(this.ActualHeight * 0.08 * -1, this.ActualHeight *0.2 * -1, this.ActualHeight * 0.08 * -1, this.ActualHeight *0.2);
+                ingredientsection.Margin = new Thickness(0, this.ActualHeight * 0.1 * -1, 0, this.ActualHeight * 0.1);
+            }
+        }
     }
 }

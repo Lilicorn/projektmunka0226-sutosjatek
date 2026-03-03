@@ -61,8 +61,12 @@
             <Image x:Name="basecake" Grid.Column="2" Panel.ZIndex="1" Margin="15pt" Source="/basecake.PNG" Stretch="Uniform"/>
 
             <Image x:Name="stand_frame" Grid.Column="2" Panel.ZIndex="0" Margin="15pt" Source="/decorassets/stand/stand_1.png" Stretch="Uniform"/>
-           
-            <Button Grid.Column="3" VerticalAlignment="Bottom" Click="Outro_Click" x:Name="outro" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="Finish" Foreground="White" Background="HotPink" BorderBrush="White"></Button>
+
+            <Button Padding="10" Grid.Column="3" VerticalAlignment="Bottom" Click="Outro_Click" x:Name="outro"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="Finish" Foreground="White" BorderBrush="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/otherassets/morebutton.PNG"/>
+                </Button.Background>
+            </Button>
 
         </Grid>
 
