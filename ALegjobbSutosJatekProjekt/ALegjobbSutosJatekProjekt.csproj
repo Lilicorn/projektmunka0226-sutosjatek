@@ -475,5 +475,31 @@
   <ItemGroup>
     <Resource Include="decorassets\topside\topside_1.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="decorassets\bottomside\bottomside_1_thumb.png" />
+    <Resource Include="decorassets\bottomside\bottomside_2_thumb.png" />
+    <Resource Include="decorassets\bottomside\bottomside_3_thumb.png" />
+    <Resource Include="decorassets\bottomside\bottomside_4_thumb.png" />
+    <Resource Include="decorassets\coveringcolor\coveringcolor_1_thumb.png" />
+    <Resource Include="decorassets\coveringcolor\coveringcolor_3_thumb.png" />
+    <Resource Include="decorassets\coveringcolor\coveringcolor_4_thumb.png" />
+    <Resource Include="decorassets\coveringcolor\covernigcolor_2_thumb.png" />
+    <Resource Include="decorassets\midside\midside_1_thumb.png" />
+    <Resource Include="decorassets\midside\midside_2_thumb.png" />
+    <Resource Include="decorassets\midside\midside_3_thumb.png" />
+    <Resource Include="decorassets\midside\midside_4_thumb.png" />
+    <Resource Include="decorassets\stand\stand_1_thumb.png" />
+    <Resource Include="decorassets\stand\stand_2_thumb.png" />
+    <Resource Include="decorassets\stand\stand_3_thumb.png" />
+    <Resource Include="decorassets\stand\stand_4_thumb.png" />
+    <Resource Include="decorassets\topfrosting\topfrosting_1_thumb.png" />
+    <Resource Include="decorassets\topfrosting\topfrosting_2_thumb.png" />
+    <Resource Include="decorassets\topfrosting\topfrosting_3_thumb.png" />
+    <Resource Include="decorassets\topfrosting\topfrosting_4_thumb.png" />
+    <Resource Include="decorassets\top\top_1_thumb.png" />
+    <Resource Include="decorassets\top\top_2_thumb.png" />
+    <Resource Include="decorassets\top\top_3_thumb.png" />
+    <Resource Include="decorassets\top\top_4_thumb.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
