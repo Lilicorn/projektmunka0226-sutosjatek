@@ -209,8 +209,6 @@
     <Resource Include="decorassets\basecake.PNG" />
     <Resource Include="decorassets\bottomside\bottomside_1.PNG" />
     <Resource Include="decorassets\midside\midside_1.PNG" />
-    <Resource Include="decorassets\topside\topside_11.PNG" />
-    <Resource Include="decorassets\topside\topside_12.PNG" />
     <Resource Include="decorassets\top\top_1.PNG" />
   </ItemGroup>
   <ItemGroup>
@@ -473,6 +471,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="lbbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="decorassets\topside\topside_1.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
