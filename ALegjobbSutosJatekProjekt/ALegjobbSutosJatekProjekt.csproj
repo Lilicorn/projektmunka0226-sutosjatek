@@ -462,5 +462,17 @@
     <Resource Include="decorassets\bottomside\bottomside_3.png" />
     <Resource Include="decorassets\bottomside\bottomside_4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="otherassets\squarebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="squarebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="otherassets\lbbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lbbg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
