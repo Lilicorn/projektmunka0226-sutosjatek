@@ -697,7 +697,8 @@ namespace ALegjobbSutosJatekProjekt
             }
             else if (section == 11)
             {
-                Usualtarget.Margin = new Thickness(this.ActualHeight * 0.3 * -1, this.ActualHeight * 0.1 * -1, this.ActualHeight * 0.3, this.ActualHeight * 0.1);
+                Usualtarget.Margin = new Thickness(this.ActualWidth * 0.2 * -1, this.ActualHeight * 0.1 * -1, this.ActualWidth * 0.25, this.ActualHeight * 0.1);
+
                 ingredientsection.Margin = new Thickness(0, this.ActualHeight * 0.1 * -1, 0, this.ActualHeight * 0.1);
 
             }
@@ -722,7 +723,7 @@ namespace ALegjobbSutosJatekProjekt
             }
             else if (section == 11)
             {
-                Usualtarget.Margin = new Thickness(this.ActualHeight * 0.3 * -1, this.ActualHeight *0.1  * -1, this.ActualHeight * 0.3, this.ActualHeight * 0.1);
+                Usualtarget.Margin = new Thickness(this.ActualWidth * 0.2 * -1, this.ActualHeight *0.1  * -1, this.ActualWidth * 0.25, this.ActualHeight * 0.1);
                 ingredientsection.Margin = new Thickness(0, this.ActualHeight * 0.1 * -1, 0, this.ActualHeight * 0.1);
 
             }
