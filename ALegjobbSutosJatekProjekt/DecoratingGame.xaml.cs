@@ -57,7 +57,7 @@ namespace ALegjobbSutosJatekProjekt
 
             for (int i = 1; i <= 4; i++)
             {
-                string path = $"/decorassets/{category}/{category}_{i}.png";
+                string path = $"/decorassets/{category}/{category}_{i}_thumb.png";
                 //HEADS UP THE IMAGES LOOK GOD AWFUL IN THE CURRENT STATE (they dont even resize currently),,
                 //but it works thats all that matters we fix that when we get there,, maybe thumbnails?? or resize them correctly??
                 decorListing.Items.Add(path);
@@ -69,7 +69,7 @@ namespace ALegjobbSutosJatekProjekt
             if (decorListing.SelectedItem == null) //yknow that one code we made where we needed this? yeah same shit
                 return;
 
-            string selectedImage = decorListing.SelectedItem.ToString();
+            string selectedImage = decorListing.SelectedItem.ToString().Replace("_thumb","");
 
             ApplyDecorToCake(selectedImage);
         }
