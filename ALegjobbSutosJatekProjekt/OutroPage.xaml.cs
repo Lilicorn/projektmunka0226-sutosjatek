@@ -25,6 +25,27 @@ namespace ALegjobbSutosJatekProjekt
         public OutroPage() 
         {
             InitializeComponent();
+
+            if (CakeState.Top != null)
+                top_frame.Source = new BitmapImage(new Uri(CakeState.Top, UriKind.Relative));
+
+            if (CakeState.TopSide != null)
+                topside_frame1.Source = new BitmapImage(new Uri(CakeState.TopSide, UriKind.Relative));
+
+            if (CakeState.MidSide != null)
+                midside_frame.Source = new BitmapImage(new Uri(CakeState.MidSide, UriKind.Relative));
+
+            if (CakeState.BottomSide != null)
+                bottomside_frame.Source = new BitmapImage(new Uri(CakeState.BottomSide, UriKind.Relative));
+
+            if (CakeState.TopFrosting != null)
+                topfrosting_frame.Source = new BitmapImage(new Uri(CakeState.TopFrosting, UriKind.Relative));
+
+            if (CakeState.CoveringColor != null)
+                coveringcolor_frame.Source = new BitmapImage(new Uri(CakeState.CoveringColor, UriKind.Relative));
+
+            if (CakeState.Stand != null)
+                stand_frame.Source = new BitmapImage(new Uri(CakeState.Stand, UriKind.Relative));
         }
         private void Play_Click(object sender, RoutedEventArgs e)
         {

@@ -50,8 +50,7 @@ namespace ALegjobbSutosJatekProjekt
         }
 
         private void Play_Click(object sender, RoutedEventArgs e) { 
-               //NavigationService.Navigate(new TransitionPage());
-               NavigationService.Navigate(new DecoratingGame());
+               NavigationService.Navigate(new TransitionPage());
         }
 
 

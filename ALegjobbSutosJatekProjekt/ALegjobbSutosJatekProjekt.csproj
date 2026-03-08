@@ -212,15 +212,6 @@
     <Resource Include="decorassets\top\top_1.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="basecake.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="stand_1.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="coveringcolor_1.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="targetassets\10_0.png" />
     <Resource Include="targetassets\10_1.png" />
     <Resource Include="targetassets\11_0.png" />
@@ -267,22 +258,12 @@
     <Resource Include="targetassets\9_2_0.png" />
     <Resource Include="targetassets\9_2_1.png" />
     <Resource Include="targetassets\end.png" />
-    <Resource Include="topfrosting_1.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="bottomside_1.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="midside_1.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="topside_11.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="topside_12.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="top_1.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ingredientassets\mixer_empty.png" />

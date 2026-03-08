@@ -17,14 +17,15 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="5*"/>
-                </Grid.RowDefinitions>
 
-                <Image>
-
-                </Image>
+                <Image x:Name="topside_frame1" Grid.Column="2" Panel.ZIndex="7" Margin="15pt" Source="/decorassets/topside/topside_11.png" Stretch="Uniform"/>
+                <Image x:Name="top_frame" Grid.Column="2" Panel.ZIndex="6" Margin="15pt" Source="/decorassets/top/top_1.png" Stretch="Uniform"/>
+                <Image x:Name="midside_frame" Grid.Column="2" Panel.ZIndex="4" Margin="15pt" Source="/decorassets/midside/midside_1.png" Stretch="Uniform"/>
+                <Image x:Name="bottomside_frame" Grid.Column="2" Panel.ZIndex="3" Margin="15pt" Source="/decorassets/bottomside/bottomside_1.png" Stretch="Uniform"/>
+                <Image x:Name="topfrosting_frame" Grid.Column="2" Panel.ZIndex="3" Margin="15pt" Source="decorassets/topfrosting/topfrosting_1.png" Stretch="Uniform"/>
+                <Image x:Name="coveringcolor_frame" Grid.Column="2" Panel.ZIndex="2" Margin="15pt" Source="/decorassets/coveringcolor/coveringcolor_1.png" Stretch="Uniform"/>
+                <Image x:Name="basecake" Grid.Column="2" Panel.ZIndex="1" Margin="15pt" Source="decorassets/basecake.PNG" Stretch="Uniform"/>
+                <Image x:Name="stand_frame" Grid.Column="2" Panel.ZIndex="0" Margin="15pt" Source="/decorassets/stand/stand_1.png" Stretch="Uniform"/>
 
             </Grid>
             <Grid Grid.Column="1">

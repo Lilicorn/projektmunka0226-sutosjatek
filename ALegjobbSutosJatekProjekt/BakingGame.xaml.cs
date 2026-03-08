@@ -58,11 +58,9 @@ namespace ALegjobbSutosJatekProjekt
         {
             InitializeComponent();
             ingredientSlots = new List<Image> { ingredient0, ingredient1, ingredient2, ingredient3, ingredient4 };
-            //ezt valamiert csak ide endgedi sziaaa
             Section1();
         }
 
-        //wpf logikak uyg nagjabol eeehehehehehhhehhhheeee
         Image eredetihely = null;
         Image huzigalt = null;
         Point offset;
@@ -149,7 +147,7 @@ namespace ALegjobbSutosJatekProjekt
                     if (repeater >= leccimukodj.Repeats)
                     {
                         step++;
-                        eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}{repeater}.png", UriKind.Relative)); // atirtam relativera hogy ne keljen mindent beirni ugh
+                        eredetihely.Source = new BitmapImage(new Uri($"{leccimukodj.ImageSource}{repeater}.png", UriKind.Relative));
                         eredetihely.Opacity = 0.3;
                         repeater = 0;
                         if (step != hozzávalók.Count)
@@ -254,8 +252,6 @@ namespace ALegjobbSutosJatekProjekt
             background.ReleaseMouseCapture();
 
         }
-
-        //mi dolgaink
 
         List<ingredient> hozzávalók = new List<ingredient>();
         int step = 0;
@@ -468,7 +464,6 @@ namespace ALegjobbSutosJatekProjekt
 
         }
 
-        //innnentol ok
         public async void Section9()
         {
             picoffset = 0;
@@ -522,7 +517,6 @@ namespace ALegjobbSutosJatekProjekt
 
         }
 
-        //section ami csak valt 2-3 kepet a kesz tortarol
         public async void Section11()
         {
             theCleaner();
@@ -553,8 +547,6 @@ namespace ALegjobbSutosJatekProjekt
             await Task.Delay(500);
             Usualtarget.Source = new BitmapImage(new Uri($"/targetassets/11_9.png", UriKind.Relative));
             await Task.Delay(500);
-
-            //nwemtom kell-e meg kep esetleg? 
 
             section++;
             step = 0;

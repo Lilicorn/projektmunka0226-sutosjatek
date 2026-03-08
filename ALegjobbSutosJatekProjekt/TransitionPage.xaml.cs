@@ -51,7 +51,6 @@ namespace ALegjobbSutosJatekProjekt
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var cucc = new ThicknessConverter();
-            // Use 'this.ActualHeight' instead of 'Page.ActualHeight' to reference the current Page instance
             Thickness leccives = (Thickness)cucc.ConvertFromString($"0 {this.ActualHeight * (1 / 3.0)} 0 0");
             table.Margin = leccives;
         }

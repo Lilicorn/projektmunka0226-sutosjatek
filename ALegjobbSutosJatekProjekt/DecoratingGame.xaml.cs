@@ -20,7 +20,7 @@ namespace ALegjobbSutosJatekProjekt
     /// </summary>
     public partial class DecoratingGame : Page
     {
-        private string currentCategory = ""; //WHERE THE FUCK ARE WE /j
+        private string currentCategory = "";
         public DecoratingGame()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace ALegjobbSutosJatekProjekt
 
         }
 
-        private void Page_SizeChanged(object sender, SizeChangedEventArgs e) // ez kell mert igy reszponziv az asztal es a gombospanel
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             table.Margin = new Thickness(0, this.ActualHeight * (1 / 3.0), 0, 0);
 
@@ -43,9 +43,8 @@ namespace ALegjobbSutosJatekProjekt
 
         private void Loader_Click(object sender, RoutedEventArgs e)
         {
-            Button clicked = sender as Button; // Need this for the button name
+            Button clicked = sender as Button; 
 
-            // We get what we need from button,, minus the loader part 👍🔥
             currentCategory = clicked.Name.Replace("_loader", "");
 
             LoadDecorImages(currentCategory);
@@ -58,15 +57,13 @@ namespace ALegjobbSutosJatekProjekt
             for (int i = 1; i <= 4; i++)
             {
                 string path = $"/decorassets/{category}/{category}_{i}_thumb.png";
-                //HEADS UP THE IMAGES LOOK GOD AWFUL IN THE CURRENT STATE (they dont even resize currently),,
-                //but it works thats all that matters we fix that when we get there,, maybe thumbnails?? or resize them correctly??
                 decorListing.Items.Add(path);
             }
         }
 
         private void decorListing_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (decorListing.SelectedItem == null) //yknow that one code we made where we needed this? yeah same shit
+            if (decorListing.SelectedItem == null)
                 return;
 
             string selectedImage = decorListing.SelectedItem.ToString().Replace("_thumb","");
@@ -75,40 +72,44 @@ namespace ALegjobbSutosJatekProjekt
         }
 
         private void ApplyDecorToCake(string imagePath)
-        {
-            //,, I looked this up idk how BitmapImage works entirely but its good for images apperantnly so,,
+        {     
             BitmapImage bitmap = new BitmapImage(new Uri(imagePath, UriKind.Relative));
 
-            // Im forgeting switch exists but its easier this way
             switch (currentCategory)
             {
                 case "top":
                     top_frame.Source = bitmap;
+                    CakeState.Top = imagePath;
                     break;
 
                 case "topside":
                     topside_frame1.Source = bitmap;
-                    topside_frame2.Source = bitmap;
+                    CakeState.TopSide = imagePath;
                     break;
 
                 case "midside":
                     midside_frame.Source = bitmap;
+                    CakeState.MidSide = imagePath;
                     break;
 
                 case "bottomside":
                     bottomside_frame.Source = bitmap;
+                    CakeState.BottomSide = imagePath;
                     break;
 
                 case "topfrosting":
                     topfrosting_frame.Source = bitmap;
+                    CakeState.TopFrosting = imagePath;
                     break;
 
                 case "coveringcolor":
                     coveringcolor_frame.Source = bitmap;
+                    CakeState.CoveringColor = imagePath;
                     break;
 
                 case "stand":
                     stand_frame.Source = bitmap;
+                    CakeState.Stand = imagePath;
                     break;
             }
         }
@@ -117,5 +118,15 @@ namespace ALegjobbSutosJatekProjekt
         {
             NavigationService.Navigate(new OutroPage());
         }
+    }
+    public static class CakeState
+    {
+        public static string Top;
+        public static string TopSide;
+        public static string MidSide;
+        public static string BottomSide;
+        public static string TopFrosting;
+        public static string CoveringColor;
+        public static string Stand;
     }
 }

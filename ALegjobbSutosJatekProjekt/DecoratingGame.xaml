@@ -66,7 +66,6 @@
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
 
-                <!-- <Image Source="{Binding}" -> This is where shit gets filled from the code 👍,, currently housing some random width and height-->
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border Margin="5">
@@ -79,11 +78,9 @@
                 </ListBox.ItemTemplate>
 
             </ListBox>
-
-            <!--No need to rename its easier if they stay like this-->
+            
             <Image x:Name="topside_frame1" Grid.Column="2" Panel.ZIndex="7" Margin="15pt" Source="/decorassets/topside/topside_11.png" Stretch="Uniform"/>
             <Image x:Name="top_frame" Grid.Column="2" Panel.ZIndex="6" Margin="15pt" Source="/decorassets/top/top_1.png" Stretch="Uniform"/>
-            <Image x:Name="topside_frame2" Grid.Column="2" Panel.ZIndex="5" Margin="15pt" Source="/decorassets/topside/topside_12.png" Stretch="Uniform"/>
             <Image x:Name="midside_frame" Grid.Column="2" Panel.ZIndex="4" Margin="15pt" Source="/decorassets/midside/midside_1.png" Stretch="Uniform"/>
             <Image x:Name="bottomside_frame" Grid.Column="2" Panel.ZIndex="3" Margin="15pt" Source="/decorassets/bottomside/bottomside_1.png" Stretch="Uniform"/>
             <Image x:Name="topfrosting_frame" Grid.Column="2" Panel.ZIndex="3" Margin="15pt" Source="decorassets/topfrosting/topfrosting_1.png" Stretch="Uniform"/>
