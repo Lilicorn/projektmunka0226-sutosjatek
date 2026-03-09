@@ -18,37 +18,37 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                <Button  Click="Loader_Click" x:Name="top_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="1" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}" >
+                <Button  Click="Loader_Click" x:Name="top_loader" Margin="0 3pt" Height="30pt" FontFamily="Comic Sans MS" FontSize="20" Content="1" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}" >
                     <Button.Background>
                         <ImageBrush ImageSource="/squarebutton.png"/>
                     </Button.Background>
                 </Button>
-                <Button  Click="Loader_Click" x:Name="topside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="2" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
+                <Button  Click="Loader_Click" x:Name="topside_loader" Margin="0 3pt" Height="30pt" FontFamily="Comic Sans MS" FontSize="20" Content="2" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
                     <Button.Background>
                         <ImageBrush ImageSource="/otherassets/squarebutton.png"/>
                     </Button.Background>
                 </Button>
-                <Button  Click="Loader_Click" x:Name="midside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="3" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
+                <Button  Click="Loader_Click" x:Name="midside_loader" Margin="0 3pt" Height="30pt" FontFamily="Comic Sans MS" FontSize="20" Content="3" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
                     <Button.Background>
                         <ImageBrush ImageSource="/otherassets/squarebutton.png"/>
                     </Button.Background>
                 </Button>
-                <Button  Click="Loader_Click" x:Name="bottomside_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="4" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
+                <Button  Click="Loader_Click" x:Name="bottomside_loader" Margin="0 3pt" Height="30pt" FontFamily="Comic Sans MS" FontSize="20" Content="4" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
                     <Button.Background>
                         <ImageBrush ImageSource="/otherassets/squarebutton.png"/>
                     </Button.Background>
                 </Button>
-                <Button  Click="Loader_Click" x:Name="topfrosting_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="5" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
+                <Button  Click="Loader_Click" x:Name="topfrosting_loader" Margin="0 3pt" Height="30pt" FontFamily="Comic Sans MS" FontSize="20" Content="5" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
                     <Button.Background>
                         <ImageBrush ImageSource="/otherassets/squarebutton.png"/>
                     </Button.Background>
                 </Button>
-                <Button  Click="Loader_Click" x:Name="coveringcolor_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="6" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
+                <Button  Click="Loader_Click" x:Name="coveringcolor_loader" Margin="0 3pt" Height="30pt" FontFamily="Comic Sans MS" FontSize="20" Content="6" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
                     <Button.Background>
                         <ImageBrush ImageSource="/otherassets/squarebutton.png"/>
                     </Button.Background>
                 </Button>
-                <Button  Click="Loader_Click" x:Name="stand_loader" Margin="0 3pt" Height="30pt" FontFamily="Gill Sans Ultra Bold" FontSize="20" Content="7" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
+                <Button  Click="Loader_Click" x:Name="stand_loader" Margin="0 3pt" Height="30pt" FontFamily="Comic Sans MS" FontSize="20" Content="7" Foreground="White" BorderBrush="White" Style="{StaticResource GameButtonStyle}">
                     <Button.Background>
                         <ImageBrush ImageSource="/otherassets/squarebutton.png"/>
                     </Button.Background>
@@ -90,7 +90,7 @@
 
             <Image x:Name="stand_frame" Grid.Column="2" Panel.ZIndex="0" Margin="15pt" Source="/decorassets/stand/stand_1.png" Stretch="Uniform"/>
 
-            <Button Height="30pt" Grid.Column="3" VerticalAlignment="Bottom" Click="Outro_Click" x:Name="outro"  FontFamily="Gill Sans Ultra Bold" FontSize="15" Content="Finish" Foreground="White" BorderBrush="{x:Null}" Style="{StaticResource GameButtonStyle}">
+            <Button Height="30pt" Grid.Column="3" VerticalAlignment="Bottom" Click="Outro_Click" x:Name="outro"  FontFamily="Comic Sans MS" FontSize="15" Content="Finish" Foreground="White" BorderBrush="{x:Null}" Style="{StaticResource GameButtonStyle}">
                 <Button.Background>
                     <ImageBrush ImageSource="/otherassets/morebutton.PNG"/>
                 </Button.Background>

@@ -41,7 +41,7 @@
                         <ImageBrush ImageSource="/playbutton.PNG" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="more" Grid.Row="2" Margin="20pt 10pt" Content="MORE"  Click="more_Click" Style="{StaticResource GameButtonStyle}" FontSize="20pt" FontFamily="Gill Sans Ultra Bold" Foreground="White">
+                <Button x:Name="more" Grid.Row="2" Margin="20pt 10pt" Content="MORE"  Click="more_Click" Style="{StaticResource GameButtonStyle}" FontSize="20pt" FontFamily="Comic Sans MS" Foreground="White">
                     <Button.Background>
                         <ImageBrush ImageSource="/otherassets/morebutton.PNG" Stretch="Uniform"/>
                     </Button.Background>
