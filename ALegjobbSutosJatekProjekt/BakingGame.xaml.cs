@@ -440,7 +440,7 @@ namespace ALegjobbSutosJatekProjekt
             await usualtargetupdater();
 
             transitionphase = true;
-            Instructions.Content = "wait 4 it to boil...";
+            Instructions.Content = "wait for it to boil...";
             for (int j = 1; j <= 2; j++)
             {
                 for (int i = 1; i <= 4; i++)
